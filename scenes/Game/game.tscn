@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhxadh3ep4jq4"]
+
+[ext_resource type="Script" uid="uid://be2mfn6ulv5b3" path="res://scenes/Game/Game.gd" id="1_fc1p2"]
+[ext_resource type="PackedScene" uid="uid://doqb8enh6s06u" path="res://scenes/MainMenu/MainMenu.tscn" id="3_7dfdq"]
+[ext_resource type="PackedScene" uid="uid://4brwvk3vucfd" path="res://scenes/SettingsMenu/SettingsMenu.tscn" id="3_bfxw3"]
+[ext_resource type="PackedScene" uid="uid://cf5m7whj1ygr4" path="res://scenes/Players/Players.tscn" id="3_fc1p2"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_fc1p2")
+
+[node name="Menus" type="Node2D" parent="."]
+
+[node name="MainMenu" parent="Menus" instance=ExtResource("3_7dfdq")]
+
+[node name="SettingsMenu" parent="Menus" instance=ExtResource("3_bfxw3")]
+
+[node name="Players" parent="." instance=ExtResource("3_fc1p2")]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbxxaeu3xirne"]
+
+[ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="1_7v6hp"]
+[ext_resource type="Script" uid="uid://b1u70dox1qiqh" path="res://scenes/Arrow/arrow.gd" id="1_e8rkg"]
+[ext_resource type="Texture2D" uid="uid://cw3i46stwh2cm" path="res://sprites/arrow.png" id="2_e8rkg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gku7s"]
+resource_local_to_scene = true
+shader = ExtResource("1_7v6hp")
+shader_parameter/rgb = Color(0, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2phj"]
+size = Vector2(1.125, 1.125)
+
+[node name="Arrow" type="Node2D"]
+script = ExtResource("1_e8rkg")
+
+[node name="ArrowSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_gku7s")
+texture = ExtResource("2_e8rkg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_m2phj")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

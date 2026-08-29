@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://4brwvk3vucfd"]
+
+[ext_resource type="Script" uid="uid://cywr250bkboim" path="res://scenes/SettingsMenu/SettingsMenu.gd" id="1_g6n2q"]
+[ext_resource type="PackedScene" uid="uid://bdtr8anisxmav" path="res://scenes/Setting/Setting.tscn" id="2_ckk2l"]
+
+[node name="SettingsMenu" type="Node2D"]
+script = ExtResource("1_g6n2q")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 240.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 31
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 40.0
+offset_right = 240.0
+offset_bottom = 180.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="Match Time" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+possibleValues = [5, 30, 60, 120]
+settingKey = "matchTime"
+
+[node name="Wins for Victory" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+possibleValues = [1, 2, 3]
+settingKey = "firstToWins"
+
+[node name="Max Tiles Per Player" parent="CenterContainer/VBoxContainer" instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+possibleValues = [1, 2, 3, 4, 5]
+settingKey = "maxTilesPerPlayer"
+
+[node name="Back" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

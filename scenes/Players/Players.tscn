@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf5m7whj1ygr4"]
+
+[ext_resource type="Script" uid="uid://2b0y6aoacly2" path="res://scenes/Players/Players.gd" id="1_meagc"]
+[ext_resource type="PackedScene" uid="uid://dwk4bg6q0iovf" path="res://scenes/Player/Player.tscn" id="1_nrsiy"]
+
+[node name="Players" type="Node2D"]
+script = ExtResource("1_meagc")
+
+[node name="Player1" parent="." instance=ExtResource("1_nrsiy")]
+collision_mask = 2
+playerNum = 1
+
+[node name="Player2" parent="." instance=ExtResource("1_nrsiy")]
+playerNum = 2
+color = Vector3(0, 0.5, 0)
+startingPos = Vector2(100, 0)
+inputNum = 1
+
+[node name="Player3" parent="." instance=ExtResource("1_nrsiy")]
+playerNum = 3
+color = Vector3(0, 0, 1)
+startingPos = Vector2(0, 100)
+inputNum = 2
+
+[node name="Player4" parent="." instance=ExtResource("1_nrsiy")]
+playerNum = 4
+color = Vector3(1, 1, 0)
+startingPos = Vector2(100, 100)
+inputNum = 3

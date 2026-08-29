@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxtomg4botj1n"]
+
+[ext_resource type="Script" uid="uid://bsgvpketwn1lh" path="res://scenes/Tile/tile.gd" id="1_p4vtq"]
+[ext_resource type="Texture2D" uid="uid://dq6anrdsr0bbt" path="res://sprites/tile.png" id="2_8r5ye"]
+[ext_resource type="Texture2D" uid="uid://dvjegxl7d1ket" path="res://sprites/selector.png" id="3_8r5ye"]
+[ext_resource type="Texture2D" uid="uid://cw3i46stwh2cm" path="res://sprites/arrow.png" id="4_yq4sh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhibn"]
+size = Vector2(14, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yq4sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8r5ye")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tile" type="Node2D"]
+script = ExtResource("1_p4vtq")
+
+[node name="Tile" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("2_8r5ye")
+
+[node name="CursorDetector" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorDetector"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vhibn")
+
+[node name="SelectorSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_yq4sh")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("4_yq4sh")

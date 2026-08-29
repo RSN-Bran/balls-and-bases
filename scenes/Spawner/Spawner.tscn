@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://du7ixts8agoto"]
+
+[ext_resource type="PackedScene" uid="uid://cxtomg4botj1n" path="res://scenes/Tile/Tile.tscn" id="1_dmywd"]
+[ext_resource type="Script" uid="uid://djvbnxvrxtkmp" path="res://scenes/Spawner/spawner.gd" id="1_rpns5"]
+[ext_resource type="Texture2D" uid="uid://7r7fotm3fqyb" path="res://sprites/spawner.png" id="2_rpns5"]
+
+[node name="Spawner" type="Node2D"]
+script = ExtResource("1_rpns5")
+
+[node name="Tile" parent="." instance=ExtResource("1_dmywd")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_rpns5")
