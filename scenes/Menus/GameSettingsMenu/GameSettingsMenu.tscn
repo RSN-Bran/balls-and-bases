@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ornrjlbnp8d8"]
+
+[ext_resource type="PackedScene" uid="uid://btp5hfb8banax" path="res://scenes/Menus/MenuGeneric.tscn" id="1_g8iaj"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_ojp7m"]
+
+[node name="MenuGeneric" unique_id=1730890019 instance=ExtResource("1_g8iaj")]
+menuName = "Game Settings"
+
+[node name="Back" type="Button" parent="HorizontalBottom/HBoxContainer" parent_id_path=PackedInt32Array(2054617088) index="0" unique_id=882839342]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ojp7m")
+theme_override_font_sizes/font_size = 8
+text = "Back"
+
+[connection signal="pressed" from="HorizontalBottom/HBoxContainer/Back" to="." method="_on_back_pressed"]

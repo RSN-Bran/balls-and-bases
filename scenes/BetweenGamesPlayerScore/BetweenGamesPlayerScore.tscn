@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bn1rk6ewpmd1p"]
+
+[ext_resource type="Script" uid="uid://cysrseuu2w5m0" path="res://scenes/BetweenGamesPlayerScore/BetweenGamesPlayerScore.gd" id="1_ssayo"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_53bsg"]
+[ext_resource type="Texture2D" uid="uid://bu3wugkdnmd3" path="res://assets/sprites/crown.png" id="3_tq6mv"]
+
+[node name="BoxContainer" type="BoxContainer" unique_id=1764912422]
+offset_right = 45.0
+offset_bottom = 23.0
+alignment = 1
+script = ExtResource("1_ssayo")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=468220160]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="WinnerIcon" type="TextureRect" parent="HBoxContainer" unique_id=1852655744]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_tq6mv")
+stretch_mode = 4
+
+[node name="Player" type="Label" parent="HBoxContainer" unique_id=464693467]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_53bsg")
+text = "Temp"
+
+[node name="Wins" type="Label" parent="HBoxContainer" unique_id=871129996]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_53bsg")
+text = "Temp"
+horizontal_alignment = 2

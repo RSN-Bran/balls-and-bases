@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c14l7wcss71k"]
+
+[ext_resource type="Script" uid="uid://dy6k5kji1id28" path="res://scenes/Events/NeutralEvents/EventContainer/event_container.gd" id="1_i3f0u"]
+
+[node name="EventContainer" type="Node" unique_id=2089799658]
+script = ExtResource("1_i3f0u")
+
+[node name="Timer" type="Timer" parent="." unique_id=1381093662]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cusoxdm8dvkpq"]
+
+[ext_resource type="Script" uid="uid://dqirrtq5jltgl" path="res://scenes/Events/NeutralEvents/SpinningArrows/spinning_arrows_event.gd" id="1_1a0ls"]
+
+[node name="SpinningArrows" type="Node" unique_id=657532285]
+script = ExtResource("1_1a0ls")
+eventName = "Spinning Arrows"
+
+[node name="SpinTimer" type="Timer" parent="." unique_id=1650734091]
+
+[node name="EventEndTimer" type="Timer" parent="." unique_id=1906712795]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="SpinTimer" to="." method="_on_spin_timer_timeout"]
+[connection signal="timeout" from="EventEndTimer" to="." method="_on_event_end_timer_timeout"]

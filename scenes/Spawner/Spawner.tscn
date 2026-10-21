@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://du7ixts8agoto"]
+[gd_scene format=3 uid="uid://du7ixts8agoto"]
 
 [ext_resource type="PackedScene" uid="uid://cxtomg4botj1n" path="res://scenes/Tile/Tile.tscn" id="1_dmywd"]
 [ext_resource type="Script" uid="uid://djvbnxvrxtkmp" path="res://scenes/Spawner/spawner.gd" id="1_rpns5"]
-[ext_resource type="Texture2D" uid="uid://7r7fotm3fqyb" path="res://sprites/spawner.png" id="2_rpns5"]
+[ext_resource type="Texture2D" uid="uid://7r7fotm3fqyb" path="res://assets/sprites/spawner.png" id="2_rpns5"]
+[ext_resource type="PackedScene" uid="uid://dwux4880b7xau" path="res://scenes/Spawner/SpawnHandler/SpawnHandler.tscn" id="4_1qb1v"]
 
-[node name="Spawner" type="Node2D"]
+[node name="Spawner" type="Node2D" unique_id=2080062794]
 script = ExtResource("1_rpns5")
 
-[node name="Tile" parent="." instance=ExtResource("1_dmywd")]
+[node name="Tile" parent="." unique_id=1363962203 instance=ExtResource("1_dmywd")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=526223435]
 texture = ExtResource("2_rpns5")
+
+[node name="SpawnHandler" parent="." unique_id=1723291315 instance=ExtResource("4_1qb1v")]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bj1vuwolu1rbo"]
+
+[ext_resource type="PackedScene" uid="uid://btp5hfb8banax" path="res://scenes/Menus/MenuGeneric.tscn" id="1_u2sob"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_idkdn"]
+
+[node name="MenuGeneric" unique_id=1730890019 instance=ExtResource("1_u2sob")]
+menuName = "Paused"
+
+[node name="Resume" type="Button" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="0" unique_id=95166105]
+texture_filter = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_idkdn")
+theme_override_font_sizes/font_size = 16
+text = "Resume"
+
+[node name="Settings" type="Button" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="1" unique_id=901741822]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_idkdn")
+text = "Settings"
+
+[node name="Quit Match" type="Button" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="2" unique_id=2147209133]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_idkdn")
+text = "Quit Match"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Quit Match" to="." method="_on_quit_match_pressed"]

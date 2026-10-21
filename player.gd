@@ -9,14 +9,21 @@ const SPEED = 200.0
 @export var color = Vector3(1,0,0)
 @export var startingPos = Vector2(0,0)
 @export var inputNum = 0
+@export var soundEffectPitchOffset: float = 1
 
+var playerName
 var score=0
+var wins=0
 var direction = Vector2(0,0)
+var isRecentWinner = false
 
 var currentTileCoords
 
 func _ready():
 	position=startingPos
+	playerName = "Player " + str(playerNum)
+	
+	
 func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -31,7 +38,19 @@ func _physics_process(delta: float) -> void:
 	
 	$ArrowSprite.material.set_shader_parameter("rgb", color)
 	
-func process_input_press_event(event):
+	if global_position.x < 0:
+		global_position.x = 0
+	elif global_position.x > Constants.PIXEL_DIMENSIONS.x:
+		global_position.x = Constants.PIXEL_DIMENSIONS.x
+	
+	var dimensions = ["x", "y"]
+	for dimension in dimensions:
+		if global_position[dimension] < 0:
+			global_position[dimension] = 0
+		elif global_position[dimension] > Constants.PIXEL_DIMENSIONS[dimension]:
+			global_position[dimension] = Constants.PIXEL_DIMENSIONS[dimension]
+	
+func process_input_press_event(event: InputEvent):
 	
 		
 	direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
@@ -53,7 +72,7 @@ func process_input_press_event(event):
 			move_to_next_tile(Vector2(0,1))
 		elif Input.is_action_just_pressed("Move Right"):
 			move_to_next_tile(Vector2(1,0))
-
+		
 func process_input_release_event(event):
 	direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
 	pass
@@ -62,9 +81,8 @@ func setArrow(direction):
 	var addToList = selectedTile.setArrow(direction, self)
 	if addToList == true:
 		controlledTiles.append(selectedTile)
-		if controlledTiles.size() > Global.get_game_settings()["maxTilesPerPlayer"]:
+		if controlledTiles.size() > Global.gameNode.gameSettings.get_game_setting_value("maxTilesPerPlayer"):
 			controlledTiles[0].removeArrow()
-			controlledTiles.pop_front()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	selectedTile=area.get_parent()
@@ -76,12 +94,16 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	area.get_parent().hideSelector()
 	
 func move_to_next_tile(dir):
-
 	var tempNewCoords = currentTileCoords+dir
-	if tempNewCoords.x < 1 or tempNewCoords.y < 1 or tempNewCoords.x > 11 or tempNewCoords.y > 11:
+	if tempNewCoords.x < 0 or tempNewCoords.y < 0 or tempNewCoords.x > 11 or tempNewCoords.y > 11:
 		return
 	currentTileCoords = currentTileCoords+dir
 	global_position = currentTileCoords*16
 	
 	pass
+	
+func reset_for_match():
+	score=0
+	controlledTiles = []
+	isRecentWinner=false
 	

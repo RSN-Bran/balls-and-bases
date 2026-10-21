@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b31j8metuk0cf"]
+
+[ext_resource type="PackedScene" uid="uid://ctawo103t68ud" path="res://scenes/Base/base.tscn" id="1_yllck"]
+[ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="2_rmgml"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ce4uf"]
+resource_local_to_scene = true
+shader = ExtResource("2_rmgml")
+shader_parameter/rgb = Color(0, 0, 0, 1)
+
+[node name="Base" unique_id=788129804 instance=ExtResource("1_yllck")]
+groupNum = 3
+
+[node name="Sprite" parent="." index="1" unique_id=1620472364]
+material = SubResource("ShaderMaterial_ce4uf")

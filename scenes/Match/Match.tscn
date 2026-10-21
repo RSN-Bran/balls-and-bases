@@ -1,14 +1,46 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxxymv8sdh1ty"]
+[gd_scene format=3 uid="uid://bxxymv8sdh1ty"]
 
 [ext_resource type="Script" uid="uid://btvfneatia50q" path="res://scenes/Match/match.gd" id="1_r4s8i"]
 [ext_resource type="PackedScene" uid="uid://kte8h28vmuts" path="res://scenes/MatchHUD/MatchHUD.tscn" id="2_q4pi6"]
+[ext_resource type="Script" uid="uid://ct1snnflr7uxk" path="res://scenes/Match/MatchStatePlaying.gd" id="3_1psl4"]
+[ext_resource type="PackedScene" uid="uid://bgmh36vnwop2o" path="res://scenes/BetweenGamesHUD/BetweenGamesHUD.tscn" id="3_uuxcu"]
+[ext_resource type="Script" uid="uid://cajhl8numjagv" path="res://scenes/Match/MatchStateMachine.gd" id="4_tmeo2"]
+[ext_resource type="PackedScene" uid="uid://djvxc4ktpono1" path="res://scenes/EventContainer/EventContainer/event.tscn" id="4_uf2r1"]
+[ext_resource type="Script" uid="uid://c68iyr23mvqgs" path="res://scenes/Match/MatchStateBetweenGames.gd" id="5_u2nqx"]
+[ext_resource type="Script" uid="uid://bqjr3ircbjjya" path="res://scenes/Match/MatchStateGameEnd.gd" id="8_uf2r1"]
 
-[node name="Match" type="Node2D"]
+[node name="Match" type="Node2D" unique_id=889272476]
+position = Vector2(90, 90)
 script = ExtResource("1_r4s8i")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="MatchTimer" type="Timer" parent="." unique_id=993578638]
 wait_time = 60.0
 
-[node name="CanvasLayer" parent="." instance=ExtResource("2_q4pi6")]
+[node name="GameHUD" parent="." unique_id=504057637 instance=ExtResource("2_q4pi6")]
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="PauseFadeLayer" type="ColorRect" parent="GameHUD" unique_id=542673642]
+z_index = 100
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="BetweenGamesHud" parent="." unique_id=873772343 instance=ExtResource("3_uuxcu")]
+
+[node name="Movers" type="Node2D" parent="." unique_id=1213307534]
+z_index = 20
+
+[node name="EventHandler" parent="." unique_id=1299369564 instance=ExtResource("4_uf2r1")]
+
+[node name="MatchStateMachine" type="Node" parent="." unique_id=1270754605]
+script = ExtResource("4_tmeo2")
+
+[node name="Playing" type="Node" parent="MatchStateMachine" unique_id=475766505]
+script = ExtResource("3_1psl4")
+
+[node name="BetweenGames" type="Node" parent="MatchStateMachine" unique_id=878865948]
+script = ExtResource("5_u2nqx")
+
+[node name="GameEnd" type="Node" parent="MatchStateMachine" unique_id=522895360]
+script = ExtResource("8_uf2r1")
+
+[connection signal="timeout" from="MatchTimer" to="." method="_on_timer_timeout"]

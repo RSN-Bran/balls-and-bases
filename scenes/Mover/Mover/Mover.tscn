@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bohiwl30euesi"]
+
+[ext_resource type="Script" uid="uid://qrjmikse8moe" path="res://scenes/Mover/Mover/Mover.gd" id="1_8voll"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1q2gf"]
+radius = 2.0
+
+[sub_resource type="Animation" id="Animation_cj3t1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ben8j"]
+resource_name = "fall_in_pit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cj3t1"]
+_data = {
+&"RESET": SubResource("Animation_cj3t1"),
+&"fall_in_pit": SubResource("Animation_ben8j")
+}
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1674219411]
+gravity_scale = 0.0
+continuous_cd = 2
+script = ExtResource("1_8voll")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2033856955]
+collision_layer = 5
+
+[node name="Collider" type="CollisionShape2D" parent="Area2D" unique_id=1081635112]
+shape = SubResource("CircleShape2D_1q2gf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=285143661]
+libraries/ = SubResource("AnimationLibrary_cj3t1")

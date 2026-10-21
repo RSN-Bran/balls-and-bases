@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cb21a6ymysjso"]
+
+[ext_resource type="Script" uid="uid://bomabmsejkaim" path="res://scenes/Events/NeutralEvents/RandomizePlayerPositions/randomize_positions_event.gd" id="1_r5s7c"]
+
+[node name="RandomizePositionsEvent" type="Node" unique_id=1730186466]
+script = ExtResource("1_r5s7c")
+eventName = "Randomize Positions"

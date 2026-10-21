@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://65emytgdfhal"]
+
+[ext_resource type="Script" uid="uid://e2oj8d135473" path="res://scenes/EventContainer/EventMenuLabel/event_menu_label.gd" id="1_rb0qg"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_4nsm6"]
+
+[sub_resource type="Theme" id="Theme_73rex"]
+resource_local_to_scene = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqb8c"]
+resource_local_to_scene = true
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_jdsbv"]
+resource_local_to_scene = true
+
+[node name="PanelContainer" type="PanelContainer" unique_id=1274098108]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 44.0
+theme = SubResource("Theme_73rex")
+theme_override_styles/panel = SubResource("StyleBoxFlat_oqb8c")
+script = ExtResource("1_rb0qg")
+
+[node name="EventMenuLabel" type="Label" parent="." unique_id=739479141]
+layout_mode = 2
+theme = SubResource("Theme_jdsbv")
+theme_override_fonts/font = ExtResource("2_4nsm6")
+horizontal_alignment = 1
+vertical_alignment = 1

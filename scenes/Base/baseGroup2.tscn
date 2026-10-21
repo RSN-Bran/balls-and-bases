@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bfehxtd7bdi5d"]
+
+[ext_resource type="PackedScene" uid="uid://ctawo103t68ud" path="res://scenes/Base/base.tscn" id="1_4g3o5"]
+[ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="2_kvel5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eckp2"]
+resource_local_to_scene = true
+shader = ExtResource("2_kvel5")
+shader_parameter/rgb = Color(0, 0, 0, 1)
+
+[node name="Base" unique_id=788129804 instance=ExtResource("1_4g3o5")]
+groupNum = 2
+
+[node name="Sprite" parent="." index="1" unique_id=1620472364]
+material = SubResource("ShaderMaterial_eckp2")

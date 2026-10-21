@@ -1,24 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://ly7vf15c3jyg"]
+[gd_scene format=3 uid="uid://ly7vf15c3jyg"]
 
 [ext_resource type="Script" uid="uid://3a5pir31irua" path="res://scenes/Pit/pit.gd" id="1_nyo2o"]
 [ext_resource type="PackedScene" uid="uid://cxtomg4botj1n" path="res://scenes/Tile/Tile.tscn" id="1_u7mow"]
-[ext_resource type="Texture2D" uid="uid://bay2p5l78hvbd" path="res://sprites/pit.png" id="2_nyo2o"]
+[ext_resource type="Texture2D" uid="uid://bay2p5l78hvbd" path="res://assets/sprites/pit.png" id="2_nyo2o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7mow"]
 size = Vector2(1.5625, 1.5625)
 
-[node name="Pit" type="Node2D"]
+[node name="Pit" type="Node2D" unique_id=1949299090]
+texture_filter = 1
 script = ExtResource("1_nyo2o")
 
-[node name="Tile" parent="." instance=ExtResource("1_u7mow")]
+[node name="Tile" parent="." unique_id=603161098 instance=ExtResource("1_u7mow")]
 isArrowPlaceable = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1490448391]
 texture = ExtResource("2_nyo2o")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=792128771]
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=26766247]
 shape = SubResource("RectangleShape2D_u7mow")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

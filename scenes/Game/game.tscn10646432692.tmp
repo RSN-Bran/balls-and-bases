@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bhxadh3ep4jq4"]
+
+[ext_resource type="Script" uid="uid://be2mfn6ulv5b3" path="res://scenes/Game/Game.gd" id="1_fc1p2"]
+[ext_resource type="PackedScene" uid="uid://doqb8enh6s06u" path="res://scenes/MainMenu/MainMenu.tscn" id="3_7dfdq"]
+[ext_resource type="PackedScene" uid="uid://4brwvk3vucfd" path="res://scenes/SettingsMenu/SettingsMenu.tscn" id="3_bfxw3"]
+[ext_resource type="PackedScene" uid="uid://cf5m7whj1ygr4" path="res://scenes/Players/Players.tscn" id="3_fc1p2"]
+[ext_resource type="Script" uid="uid://tnfppfqenv5w" path="res://scenes/Game/game_state_machine.gd" id="5_7dfdq"]
+[ext_resource type="Script" uid="uid://coysas8rn3kxe" path="res://scenes/Game/GameStateMachineMainMenu.gd" id="6_54y65"]
+[ext_resource type="Script" uid="uid://u60twr4xwdt" path="res://scenes/Game/GameStateMachineInGame.gd" id="6_t5wam"]
+
+[node name="Game" type="Node2D" unique_id=50149806]
+position = Vector2(8, 8)
+script = ExtResource("1_fc1p2")
+
+[node name="Menus" type="Node2D" parent="." unique_id=1003330274]
+
+[node name="MainMenu" parent="Menus" unique_id=99319285 instance=ExtResource("3_7dfdq")]
+
+[node name="SettingsMenu" parent="Menus" unique_id=2083111593 instance=ExtResource("3_bfxw3")]
+
+[node name="Players" parent="." unique_id=1494623793 instance=ExtResource("3_fc1p2")]
+
+[node name="GameStateMachine" type="Node" parent="." unique_id=451287023]
+script = ExtResource("5_7dfdq")
+
+[node name="InGame" type="Node" parent="GameStateMachine" unique_id=2110560197]
+script = ExtResource("6_t5wam")
+
+[node name="MainMenu" type="Node" parent="GameStateMachine" unique_id=1908528688]
+script = ExtResource("6_54y65")

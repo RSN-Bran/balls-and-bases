@@ -1,34 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbl3eg6oo8140"]
+[gd_scene format=3 uid="uid://bbl3eg6oo8140"]
 
 [ext_resource type="Script" uid="uid://d22g4ykddpxp3" path="res://scenes/ScoreHUD/score_hud.gd" id="1_y5vbt"]
-[ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="2_2ihrq"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="3_8sgsr"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sgsr"]
-resource_local_to_scene = true
-shader = ExtResource("2_2ihrq")
-shader_parameter/rgb = Color(0, 0, 0, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ibkc4"]
-font_color = Color(0, 0, 0, 1)
-
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MarginContainer" type="MarginContainer" unique_id=828484963]
+offset_right = 129.0
+offset_bottom = 52.0
 script = ExtResource("1_y5vbt")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_8sgsr")
-layout_mode = 0
-offset_right = 64.0
-offset_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="." unique_id=933779368]
+layout_mode = 2
+color = Color(0, 1, 1, 1)
 
-[node name="Score" type="Label" parent="."]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 8.0
-offset_right = 61.0
-offset_bottom = 31.0
-text = "Test"
-label_settings = SubResource("LabelSettings_ibkc4")
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1951418640]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1107153590]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8sgsr")
+theme_override_font_sizes/font_size = 16
+text = "test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="VBoxContainer" unique_id=817618017]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_8sgsr")
+theme_override_font_sizes/font_size = 16
+text = "test2"
+horizontal_alignment = 1
+vertical_alignment = 1

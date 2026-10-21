@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://boxv14j21m1jx"]
+
+[ext_resource type="Script" uid="uid://bwvc13mg8k6ug" path="res://scenes/Events/NeutralEvents/Freeze/freeze_event.gd" id="1_qfw0j"]
+
+[node name="Freeze" type="Node" unique_id=1318212511]
+script = ExtResource("1_qfw0j")
+eventName = "Freeze"
+
+[node name="Timer" type="Timer" parent="." unique_id=1839518707]
+wait_time = 5.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

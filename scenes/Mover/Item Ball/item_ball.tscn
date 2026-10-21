@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://djh6givt0v6xi"]
+
+[ext_resource type="PackedScene" uid="uid://bohiwl30euesi" path="res://scenes/Mover/Mover/Mover.tscn" id="1_we0t4"]
+[ext_resource type="Script" uid="uid://dwbcbrsxxqgjj" path="res://scenes/Mover/Item Ball/item_ball.gd" id="2_4kg7a"]
+[ext_resource type="Texture2D" uid="uid://b6j5cr8jiv6wy" path="res://assets/sprites/ball_item.png" id="3_0148f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wj5hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0148f")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mover" unique_id=2048633549 instance=ExtResource("1_we0t4")]
+script = ExtResource("2_4kg7a")
+worth = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=294674352]
+sprite_frames = SubResource("SpriteFrames_wj5hs")

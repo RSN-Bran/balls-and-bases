@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://bdtr8anisxmav"]
+
+[ext_resource type="Script" uid="uid://3pxbocdjkmuj" path="res://scenes/SettingButton/SettingButton.gd" id="1_po0by"]
+[ext_resource type="LabelSettings" uid="uid://ddl6btlhxnlor" path="res://misc/Label Settings/settingsLabel.tres" id="2_6vgef"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_v5ob4"]
+[ext_resource type="Texture2D" uid="uid://ck7dtfia83b67" path="res://assets/sprites/menu_arrow.png" id="4_aybi8"]
+
+[node name="HBoxContainer" type="HBoxContainer" unique_id=1533049114]
+offset_right = 95.0
+offset_bottom = 23.0
+size_flags_horizontal = 3
+focus_mode = 2
+script = ExtResource("1_po0by")
+settingKey = null
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=861092]
+layout_mode = 2
+size_flags_horizontal = 3
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1202908494]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 6.0
+offset_right = 69.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_v5ob4")
+theme_override_font_sizes/font_size = 16
+text = "Game Length"
+label_settings = ExtResource("2_6vgef")
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="ColorRect" unique_id=1976576777]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 6.0
+offset_right = 101.0
+offset_bottom = 17.0
+theme_override_fonts/font = ExtResource("2_v5ob4")
+theme_override_font_sizes/font_size = 16
+text = "Value"
+label_settings = ExtResource("2_6vgef")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1833930313]
+texture_filter = 1
+layout_mode = 0
+offset_left = 103.0
+offset_right = 119.0
+offset_bottom = 23.0
+texture = ExtResource("4_aybi8")
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect" unique_id=452538870]
+texture_filter = 1
+layout_mode = 0
+offset_left = 123.0
+offset_right = 139.0
+offset_bottom = 23.0
+texture = ExtResource("4_aybi8")

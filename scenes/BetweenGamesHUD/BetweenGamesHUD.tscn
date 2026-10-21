@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bgmh36vnwop2o"]
+
+[ext_resource type="Texture2D" uid="uid://dlpy35b1i0dtv" path="res://assets/sprites/textBox.png" id="1_vyi0p"]
+[ext_resource type="PackedScene" uid="uid://bn1rk6ewpmd1p" path="res://scenes/BetweenGamesPlayerScore/BetweenGamesPlayerScore.tscn" id="2_dwp25"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="3_uyugp"]
+
+[node name="BetweenGamesMenu" type="Control" unique_id=1199738672]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1503485783]
+texture_filter = 1
+layout_mode = 0
+offset_left = 63.0
+offset_top = 32.0
+offset_right = 257.0
+offset_bottom = 148.0
+texture = ExtResource("1_vyi0p")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="NinePatchRect" unique_id=94242844]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 7.0
+offset_right = 188.0
+offset_bottom = 109.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/BoxContainer" unique_id=1720316952]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Scores" type="Label" parent="NinePatchRect/BoxContainer/VBoxContainer" unique_id=1247775667]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uyugp")
+text = "Scores"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player1" parent="NinePatchRect/BoxContainer/VBoxContainer" unique_id=289912914 instance=ExtResource("2_dwp25")]
+layout_mode = 2
+playerNum = 1
+
+[node name="Player2" parent="NinePatchRect/BoxContainer/VBoxContainer" unique_id=104503663 instance=ExtResource("2_dwp25")]
+layout_mode = 2
+playerNum = 2
+
+[node name="Player3" parent="NinePatchRect/BoxContainer/VBoxContainer" unique_id=605194065 instance=ExtResource("2_dwp25")]
+layout_mode = 2
+playerNum = 3
+
+[node name="Player4" parent="NinePatchRect/BoxContainer/VBoxContainer" unique_id=349642368 instance=ExtResource("2_dwp25")]
+layout_mode = 2
+playerNum = 4

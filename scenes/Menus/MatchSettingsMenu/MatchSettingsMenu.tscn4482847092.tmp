@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dkvgr81imq20m"]
+
+[ext_resource type="PackedScene" uid="uid://btp5hfb8banax" path="res://scenes/Menus/MenuGeneric.tscn" id="1_16jqe"]
+[ext_resource type="FontFile" uid="uid://ch1b43qppyb1q" path="res://assets/fonts/font.ttf" id="2_7tylq"]
+[ext_resource type="PackedScene" uid="uid://bdtr8anisxmav" path="res://scenes/SettingButton/SettingButton.tscn" id="2_ckk2l"]
+
+[node name="MenuGeneric" unique_id=1730890019 instance=ExtResource("1_16jqe")]
+menuName = "Match Settings"
+
+[node name="Match Time" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="0" unique_id=1904107607 instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Wins for Victory" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="1" unique_id=976785124 instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+
+[node name="Max Tiles Per Player" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="2" unique_id=529159603 instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+
+[node name="Enable Events" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="3" unique_id=346704100 instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="HorizontalBottom/HBoxContainer" parent_id_path=PackedInt32Array(2054617088) index="0" unique_id=1964505873]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7tylq")
+theme_override_font_sizes/font_size = 8
+text = "Back"
+
+[node name="Start Match" type="Button" parent="HorizontalBottom/HBoxContainer" parent_id_path=PackedInt32Array(2054617088) index="1" unique_id=657976608]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_7tylq")
+theme_override_font_sizes/font_size = 8
+text = "Play!"
+alignment = 2
+
+[connection signal="pressed" from="HorizontalBottom/HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HorizontalBottom/HBoxContainer/Start Match" to="." method="_on_start_match_pressed"]

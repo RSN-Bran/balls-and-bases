@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b5hv3yok8n5de"]
+
+[ext_resource type="Script" uid="uid://bf66b4ldqfc6g" path="res://scenes/Events/NeutralEvents/SpeedDown/speed_down_event.gd" id="1_5dtu3"]
+
+[node name="SpeedDownEvent" type="Node" unique_id=917528260]
+script = ExtResource("1_5dtu3")
+eventName = "Speed Down"
+
+[node name="Timer" type="Timer" parent="." unique_id=643457512]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://boexdbkxn8ae8"]
+
+[ext_resource type="Script" uid="uid://coxvdackf664" path="res://scenes/Events/NeutralEvents/MoreBalls/more_balls_event.gd" id="1_o737j"]
+
+[node name="MoreBallsEvent" type="Node" unique_id=1282938550]
+script = ExtResource("1_o737j")
+eventName = "More Balls"
+
+[node name="Timer" type="Timer" parent="." unique_id=1968058690]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

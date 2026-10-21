@@ -1,4 +1,4 @@
-extends Control
+extends MarginContainer
 
 @export var playerNum = 0
 var player
@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Score.text = str(player.score)
-	$ColorRect.material.set_shader_parameter("rgb", player.color)
+	$VBoxContainer/Name.text = str(player.playerName)
+	$VBoxContainer/Score.text = str(player.score)
+	$ColorRect.color=Color(player.color.x,player.color.y,player.color.z, 1)
 	pass

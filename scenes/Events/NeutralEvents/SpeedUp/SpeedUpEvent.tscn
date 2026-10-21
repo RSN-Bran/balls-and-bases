@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://qfjq7xeegiq7"]
+
+[ext_resource type="Script" uid="uid://cmpad7vw2etve" path="res://scenes/Events/NeutralEvents/SpeedUp/speed_up_event.gd" id="1_g4ofw"]
+
+[node name="SpeedUpEvent" type="Node" unique_id=1205482640]
+script = ExtResource("1_g4ofw")
+eventName = "Speed Up"
+
+[node name="Timer" type="Timer" parent="." unique_id=453770418]
+wait_time = 10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

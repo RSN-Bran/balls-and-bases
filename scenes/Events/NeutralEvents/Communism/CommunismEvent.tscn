@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://72scygn38fce"]
+
+[ext_resource type="Script" uid="uid://bt8ref6uy6hd0" path="res://scenes/Events/NeutralEvents/Communism/communism_event.gd" id="1_6ciol"]
+
+[node name="CommunismEvent" type="Node" unique_id=538016997]
+script = ExtResource("1_6ciol")
+eventName = "Communism"

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dmcmsla0ehixm"]
+
+[ext_resource type="Script" uid="uid://ceurk1ajdq7f2" path="res://autoload/audio_manager.gd" id="1_nbik8"]
+[ext_resource type="Script" uid="uid://dbcsm3kxs7jpj" path="res://classes/SoundEffectType.gd" id="2_jqjfi"]
+[ext_resource type="AudioStream" uid="uid://bl1l5yraj7qtx" path="res://assets/sounds/menu_sound.mp3" id="3_10s6x"]
+
+[sub_resource type="Resource" id="Resource_10s6x"]
+script = ExtResource("2_jqjfi")
+playingLimit = 2
+soundFile = ExtResource("3_10s6x")
+metadata/_custom_type_script = "uid://dbcsm3kxs7jpj"
+
+[node name="AudioManager" type="Node" unique_id=1349762399]
+script = ExtResource("1_nbik8")
+soundEffectList = Array[ExtResource("2_jqjfi")]([SubResource("Resource_10s6x")])

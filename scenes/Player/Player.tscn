@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwk4bg6q0iovf"]
+[gd_scene format=3 uid="uid://dwk4bg6q0iovf"]
 
 [ext_resource type="Script" uid="uid://5df42qme8qa4" path="res://player.gd" id="1_ky53y"]
-[ext_resource type="Texture2D" uid="uid://c3u83kicpft5g" path="res://sprites/cursor.png" id="2_bvqhm"]
+[ext_resource type="Texture2D" uid="uid://c3u83kicpft5g" path="res://assets/sprites/cursor.png" id="2_bvqhm"]
 [ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="2_ved6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ved6o"]
@@ -22,24 +22,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fc0e3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=499323593]
 script = ExtResource("1_ky53y")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=544830093]
 position = Vector2(-3.875, -4)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=346009165]
 position = Vector2(0, 0.125)
 shape = SubResource("RectangleShape2D_ved6o")
 
-[node name="ArrowSprite" type="AnimatedSprite2D" parent="."]
+[node name="ArrowSprite" type="AnimatedSprite2D" parent="." unique_id=401117551]
 texture_filter = 1
 material = SubResource("ShaderMaterial_xcisb")
 sprite_frames = SubResource("SpriteFrames_xcisb")

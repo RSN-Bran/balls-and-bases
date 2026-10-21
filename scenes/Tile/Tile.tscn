@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxtomg4botj1n"]
+[gd_scene format=3 uid="uid://cxtomg4botj1n"]
 
 [ext_resource type="Script" uid="uid://bsgvpketwn1lh" path="res://scenes/Tile/tile.gd" id="1_p4vtq"]
-[ext_resource type="Texture2D" uid="uid://dq6anrdsr0bbt" path="res://sprites/tile.png" id="2_8r5ye"]
+[ext_resource type="Texture2D" uid="uid://dq6anrdsr0bbt" path="res://assets/sprites/tile.png" id="2_8r5ye"]
 [ext_resource type="Shader" uid="uid://comtu7d3xdrw7" path="res://scenes/Player/applyPlayerColor.gdshader" id="2_yq4sh"]
-[ext_resource type="Texture2D" uid="uid://dvjegxl7d1ket" path="res://sprites/selector.png" id="3_8r5ye"]
+[ext_resource type="Texture2D" uid="uid://dvjegxl7d1ket" path="res://assets/sprites/selector.png" id="3_8r5ye"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aq6o2"]
 resource_local_to_scene = true
@@ -13,31 +13,98 @@ shader_parameter/rgb = Color(0, 0, 0, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhibn"]
 size = Vector2(14, 14)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj5hs"]
+size = Vector2(0.5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nvlkt"]
+size = Vector2(0.5, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq4sh"]
+size = Vector2(13.5625, 0.5703125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w67a"]
+size = Vector2(0.875, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq4sh"]
+atlas = ExtResource("3_8r5ye")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq6o2"]
+atlas = ExtResource("3_8r5ye")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yq4sh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8r5ye")
+"texture": SubResource("AtlasTexture_yq4sh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aq6o2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
-[node name="Tile" type="Node2D"]
+[node name="Tile" type="Node2D" unique_id=972863500]
 script = ExtResource("1_p4vtq")
 
-[node name="Tile" type="Sprite2D" parent="."]
+[node name="Tile" type="Sprite2D" parent="." unique_id=1012931342]
+texture_filter = 1
 material = SubResource("ShaderMaterial_aq6o2")
 texture = ExtResource("2_8r5ye")
 
-[node name="CursorDetector" type="Area2D" parent="."]
+[node name="CursorDetector" type="Area2D" parent="." unique_id=1919283782]
 collision_layer = 2
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorDetector"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CursorDetector" unique_id=1175908439]
 shape = SubResource("RectangleShape2D_vhibn")
 
-[node name="SelectorSprite" type="AnimatedSprite2D" parent="."]
+[node name="WallDetectors" type="Node2D" parent="." unique_id=1271445138]
+
+[node name="RightDetector" type="Area2D" parent="WallDetectors" unique_id=971904178]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetectors/RightDetector" unique_id=1419033690]
+position = Vector2(7.75, 0)
+shape = SubResource("RectangleShape2D_wj5hs")
+
+[node name="LeftDetector" type="Area2D" parent="WallDetectors" unique_id=157594907]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetectors/LeftDetector" unique_id=1395544858]
+position = Vector2(-7.75, 0)
+shape = SubResource("RectangleShape2D_nvlkt")
+
+[node name="UpDetector" type="Area2D" parent="WallDetectors" unique_id=1187049979]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallDetectors/UpDetector" unique_id=629688186]
+position = Vector2(0, -7.5703125)
+shape = SubResource("RectangleShape2D_yq4sh")
+
+[node name="DownDetector" type="Area2D" parent="WallDetectors" unique_id=1729129407]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WallDetectors/DownDetector" unique_id=1556402262]
+position = Vector2(0, 7.7148438)
+shape = SubResource("RectangleShape2D_yq4sh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1009587497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=55373371]
+shape = SubResource("RectangleShape2D_8w67a")
+
+[node name="SelectorSprite" type="AnimatedSprite2D" parent="." unique_id=1501737331]
 visible = false
+z_index = 10
 sprite_frames = SubResource("SpriteFrames_yq4sh")
+autoplay = "default"
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

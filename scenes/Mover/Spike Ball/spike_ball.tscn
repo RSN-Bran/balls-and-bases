@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bynfr1wpxmtkb"]
+
+[ext_resource type="PackedScene" uid="uid://bohiwl30euesi" path="res://scenes/Mover/Mover/Mover.tscn" id="1_sdqr3"]
+[ext_resource type="Texture2D" uid="uid://bl3dcgo346rgk" path="res://assets/sprites/ball_spike.png" id="2_gww7r"]
+[ext_resource type="Script" uid="uid://i7pg0wu8lswl" path="res://scenes/Mover/Spike Ball/spike_ball.gd" id="2_xkusa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkusa"]
+atlas = ExtResource("2_gww7r")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ne05e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkusa")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mover" unique_id=2048633549 instance=ExtResource("1_sdqr3")]
+script = ExtResource("2_xkusa")
+worth = 0
+speed = 50
+damage = 10
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0" unique_id=887994769]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ne05e")

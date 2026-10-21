@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c4tonr2y0rso3"]
+
+[ext_resource type="PackedScene" uid="uid://bohiwl30euesi" path="res://scenes/Mover/Mover/Mover.tscn" id="1_uydyb"]
+[ext_resource type="Script" uid="uid://nr0qk4xmhl5j" path="res://scenes/Mover/Ball/Ball.gd" id="2_busqk"]
+[ext_resource type="Texture2D" uid="uid://bqlb34jhkko47" path="res://assets/sprites/ball.png" id="3_busqk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_busqk"]
+atlas = ExtResource("3_busqk")
+region = Rect2(2, 2, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wj5hs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_busqk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Mover" unique_id=2048633549 instance=ExtResource("1_uydyb")]
+texture_filter = 1
+script = ExtResource("2_busqk")
+damage = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=183676891]
+sprite_frames = SubResource("SpriteFrames_wj5hs")
