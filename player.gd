@@ -14,7 +14,7 @@ const SPEED = 200.0
 var playerName
 var score=0
 var wins=0
-var direction = Vector2(0,0)
+var direction = Vector2i(0,0)
 var isRecentWinner = false
 
 var currentTileCoords
@@ -93,7 +93,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	selectedTile=null
 	area.get_parent().hideSelector()
 	
-func move_to_next_tile(dir):
+func move_to_next_tile(dir: Vector2i):
 	var tempNewCoords = currentTileCoords+dir
 	if tempNewCoords.x < 0 or tempNewCoords.y < 0 or tempNewCoords.x > 11 or tempNewCoords.y > 11:
 		return

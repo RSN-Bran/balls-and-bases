@@ -5,7 +5,7 @@ var arrowScene = load("res://scenes/Arrow/Arrow.tscn")
 var isSelected
 
 var arrowInstance
-var coords
+var coords: Vector2i
 var owningPlayer
 
 var walls = {
@@ -18,7 +18,10 @@ var walls = {
 @export var isArrowPlaceable = true
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	coords = Vector2((global_position.x+6)/16, (global_position.y+6)/16)
+	var tileMapLayer = get_parent()
+	if tileMapLayer is not TileMapLayer:
+		tileMapLayer = tileMapLayer.get_parent()
+	coords = tileMapLayer.local_to_map(self.global_position)
 	determineSelectability()
 	
 	var tileColor

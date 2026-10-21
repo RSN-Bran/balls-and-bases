@@ -14,6 +14,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func set_player(playerNum):
+	print(playerNum)
 	if playerNum == 0:
 		return
 	self.playerNum=playerNum

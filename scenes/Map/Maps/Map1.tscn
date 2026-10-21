@@ -1,581 +1,209 @@
-[gd_scene format=3 uid="uid://d2c1aw20boat5"]
+[gd_scene format=4 uid="uid://ber0auf35noaf"]
 
-[ext_resource type="Script" uid="uid://dkh4mr5aukleh" path="res://scenes/Map/Maps/map_1.gd" id="1_d0jdb"]
-[ext_resource type="PackedScene" uid="uid://cxtomg4botj1n" path="res://scenes/Tile/Tile.tscn" id="1_n5kxj"]
-[ext_resource type="PackedScene" uid="uid://ctawo103t68ud" path="res://scenes/Base/base.tscn" id="2_d0jdb"]
-[ext_resource type="PackedScene" uid="uid://ly7vf15c3jyg" path="res://scenes/Pit/Pit.tscn" id="3_5pjlq"]
-[ext_resource type="PackedScene" uid="uid://o3ig3ikx4olm" path="res://scenes/Base/baseGroup1.tscn" id="3_s5ej6"]
-[ext_resource type="PackedScene" uid="uid://du7ixts8agoto" path="res://scenes/Spawner/Spawner.tscn" id="4_s5ej6"]
+[ext_resource type="PackedScene" uid="uid://swlmjh4sb37b" path="res://scenes/Map/Map.tscn" id="1_tv3ey"]
+[ext_resource type="TileSet" uid="uid://ctmma8hkec40w" path="res://tileset/TileTypes.tres" id="2_uffou"]
 [ext_resource type="PackedScene" uid="uid://drtxokshw4did" path="res://scenes/Wall/Wall.tscn" id="5_tv3ey"]
 
-[node name="Map" type="Node2D" unique_id=277374361]
-position = Vector2(-80, -80)
-script = ExtResource("1_d0jdb")
+[node name="Map" unique_id=28108545 instance=ExtResource("1_tv3ey")]
 playerCount = 4
-mapDimensions = Vector2(11, 11)
+baseSpawnRate = 40
 
-[node name="Tiles" type="Node2D" parent="." unique_id=860970732]
+[node name="Tiles" type="TileMapLayer" parent="." index="0" unique_id=1643946053]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAABAAAAAEAAAAAAAAAAQD//wEAAAAAAAAAAQD//wAAAAAAAAAAAQD/////AAAAAAAAAQAAAP//AAAAAAAAAQABAP//AAAAAAAAAQABAAAAAAAAAAAAAQABAAEAAAAAAAAAAQD+////AAAAAAAAAQD+/wAAAAAAAAAAAQD+/wEAAAAAAAAAAQD//wIAAAAAAAAAAQAAAAIAAAAAAAAAAQABAAIAAAAAAAAAAQACAAEAAAAAAAAAAQACAAAAAAAAAAAAAQACAP//AAAAAAAAAQABAP7/AAAAAAAAAQAAAP7/AAAAAAAAAQD///7/AAAAAAAAAQD9//3/AAAAAAAAAQD9//7/AAAAAAAAAQD9////AAAAAAAAAQD9/wAAAAAAAAAAAQD9/wIAAAAAAAAAAQD9/wMAAAAAAAAAAQD+/wMAAAAAAAAAAQD//wMAAAAAAAAAAQAAAAMAAAAAAAAAAQABAAMAAAAAAAAAAQACAAMAAAAAAAAAAQADAAMAAAAAAAAAAQADAAIAAAAAAAAAAQADAAEAAAAAAAAAAQADAAAAAAAAAAAAAQADAP//AAAAAAAAAQADAP7/AAAAAAAAAQADAP3/AAAAAAAAAQACAP3/AAAAAAAAAQABAP3/AAAAAAAAAQAAAP3/AAAAAAAAAQD///3/AAAAAAAAAQD+//3/AAAAAAAAAQAAAAQAAAAAAAAAAQD//wQAAAAAAAAAAQD+/wQAAAAAAAAAAQD9/wQAAAAAAAAAAQD8/wQAAAAAAAAAAQD8/wMAAAAAAAAAAQD8/wIAAAAAAAAAAQD8/wEAAAAAAAAAAQD8/wAAAAAAAAAAAQD8////AAAAAAAAAQD8//7/AAAAAAAAAQD8//3/AAAAAAAAAQD8//z/AAAAAAAAAQD9//z/AAAAAAAAAQD+//z/AAAAAAAAAQD///z/AAAAAAAAAQAAAPz/AAAAAAAAAQABAPz/AAAAAAAAAQACAPz/AAAAAAAAAQADAPz/AAAAAAAAAQAEAPz/AAAAAAAAAQAEAP3/AAAAAAAAAQAEAP7/AAAAAAAAAQAEAP//AAAAAAAAAQAEAAAAAAAAAAAAAQAEAAEAAAAAAAAAAQAEAAIAAAAAAAAAAQAEAAMAAAAAAAAAAQAEAAQAAAAAAAAAAQADAAQAAAAAAAAAAQACAAQAAAAAAAAAAQABAAQAAAAAAAAAAQD7/wQAAAAAAAAAAQD7/wMAAAAAAAAAAQD7/wEAAAAAAAAAAQD7/wAAAAAAAAAAAQD7////AAAAAAAAAQD7//7/AAAAAAAAAQD7//3/AAAAAAAAAQD7//z/AAAAAAAAAQD8//v/AAAAAAAAAQD9//v/AAAAAAAAAQD+//v/AAAAAAAAAQD///v/AAAAAAAAAQAAAPv/AAAAAAAAAQABAPv/AAAAAAAAAQACAPv/AAAAAAAAAQADAPv/AAAAAAAAAQAEAPv/AAAAAAAAAQAFAPz/AAAAAAAAAQAFAP3/AAAAAAAAAQAFAP7/AAAAAAAAAQAFAP//AAAAAAAAAQAFAAAAAAAAAAAAAQAFAAEAAAAAAAAAAQAFAAIAAAAAAAAAAQAFAAMAAAAAAAAAAQAFAAQAAAAAAAAAAQAEAAUAAAAAAAAAAQADAAUAAAAAAAAAAQACAAUAAAAAAAAAAQABAAUAAAAAAAAAAQAAAAUAAAAAAAAAAQD//wUAAAAAAAAAAQD+/wUAAAAAAAAAAQD9/wUAAAAAAAAAAQD8/wUAAAAAAAAAAQD7//v/AAAAAAAABQAFAPv/AAAAAAAABgD7/wUAAAAAAAAABwAFAAUAAAAAAAAACAD+/wIAAAAAAAAAAwACAAIAAAAAAAAAAwD+//7/AAAAAAAAAwACAP7/AAAAAAAAAwD7/wIAAAAAAAAAAQD9/wEAAAAAAAAAAQA=")
+tile_set = ExtResource("2_uffou")
 
-[node name="Tile15" parent="Tiles" unique_id=1210383505 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 32)
+[node name="Wall23" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="0" unique_id=1566749075 instance=ExtResource("5_tv3ey")]
+position = Vector2(-48, 8)
 
-[node name="Tile16" parent="Tiles" unique_id=2111169102 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 48)
+[node name="Wall24" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="1" unique_id=1175845405 instance=ExtResource("5_tv3ey")]
+position = Vector2(-48, 24)
 
-[node name="Tile17" parent="Tiles" unique_id=291330786 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 64)
+[node name="Wall25" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="2" unique_id=1311699379 instance=ExtResource("5_tv3ey")]
+position = Vector2(-48, -8)
 
-[node name="Tile18" parent="Tiles" unique_id=400238897 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 80)
-
-[node name="Tile19" parent="Tiles" unique_id=193856941 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 96)
-
-[node name="Tile20" parent="Tiles" unique_id=1793455303 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 112)
-
-[node name="Tile21" parent="Tiles" unique_id=1676177708 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 128)
-
-[node name="Tile22" parent="Tiles" unique_id=1191901377 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 144)
-
-[node name="Tile29" parent="Tiles" unique_id=1775908811 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 32)
-
-[node name="Tile30" parent="Tiles" unique_id=1149190548 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 48)
-
-[node name="Tile31" parent="Tiles" unique_id=1056410580 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 32)
-
-[node name="Tile32" parent="Tiles" unique_id=417846319 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 32)
-
-[node name="Tile33" parent="Tiles" unique_id=1413588582 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 32)
-
-[node name="Tile34" parent="Tiles" unique_id=1100201668 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 32)
-
-[node name="Tile35" parent="Tiles" unique_id=1777078693 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 32)
-
-[node name="Tile36" parent="Tiles" unique_id=792229618 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 32)
-
-[node name="Tile37" parent="Tiles" unique_id=2092137800 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 48)
-
-[node name="Tile39" parent="Tiles" unique_id=851648889 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 48)
-
-[node name="Tile40" parent="Tiles" unique_id=2029407072 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 48)
-
-[node name="Tile41" parent="Tiles" unique_id=820761980 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 48)
-
-[node name="Tile43" parent="Tiles" unique_id=918291784 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 32)
-
-[node name="Tile44" parent="Tiles" unique_id=1501934342 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 32)
-
-[node name="Tile45" parent="Tiles" unique_id=422879419 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 48)
-
-[node name="Tile46" parent="Tiles" unique_id=2127538725 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 48)
-
-[node name="Tile47" parent="Tiles" unique_id=1288513540 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 64)
-
-[node name="Tile48" parent="Tiles" unique_id=401530272 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 64)
-
-[node name="Tile49" parent="Tiles" unique_id=1586130225 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 64)
-
-[node name="Tile50" parent="Tiles" unique_id=1592658657 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 64)
-
-[node name="Tile51" parent="Tiles" unique_id=209901278 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 64)
-
-[node name="Tile52" parent="Tiles" unique_id=614757546 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 64)
-
-[node name="Tile53" parent="Tiles" unique_id=1066453983 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 64)
-
-[node name="Tile54" parent="Tiles" unique_id=1381453699 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 64)
-
-[node name="Tile55" parent="Tiles" unique_id=2137887606 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 64)
-
-[node name="Tile56" parent="Tiles" unique_id=1527231188 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 80)
-
-[node name="Tile57" parent="Tiles" unique_id=81130072 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 80)
-
-[node name="Tile58" parent="Tiles" unique_id=2054132871 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 80)
-
-[node name="Tile59" parent="Tiles" unique_id=528462185 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 80)
-
-[node name="Tile61" parent="Tiles" unique_id=1006468037 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 80)
-
-[node name="Tile62" parent="Tiles" unique_id=1842299240 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 80)
-
-[node name="Tile63" parent="Tiles" unique_id=2054958795 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 80)
-
-[node name="Tile64" parent="Tiles" unique_id=1876683072 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 80)
-
-[node name="Tile65" parent="Tiles" unique_id=1376497119 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 96)
-
-[node name="Tile66" parent="Tiles" unique_id=360398827 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 96)
-
-[node name="Tile67" parent="Tiles" unique_id=1203716779 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 96)
-
-[node name="Tile68" parent="Tiles" unique_id=438154067 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 96)
-
-[node name="Tile69" parent="Tiles" unique_id=816938030 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 96)
-
-[node name="Tile70" parent="Tiles" unique_id=1165433414 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 96)
-
-[node name="Tile71" parent="Tiles" unique_id=488913441 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 96)
-
-[node name="Tile72" parent="Tiles" unique_id=1068390804 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 96)
-
-[node name="Tile73" parent="Tiles" unique_id=1532940640 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 96)
-
-[node name="Tile74" parent="Tiles" unique_id=1756139985 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 112)
-
-[node name="Tile75" parent="Tiles" unique_id=1110307924 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 112)
-
-[node name="Tile77" parent="Tiles" unique_id=1406220746 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 112)
-
-[node name="Tile78" parent="Tiles" unique_id=1966512846 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 112)
-
-[node name="Tile79" parent="Tiles" unique_id=256584618 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 112)
-
-[node name="Tile81" parent="Tiles" unique_id=1632362476 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 112)
-
-[node name="Tile82" parent="Tiles" unique_id=183334574 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 112)
-
-[node name="Tile83" parent="Tiles" unique_id=2100595476 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 128)
-
-[node name="Tile84" parent="Tiles" unique_id=1115827168 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 128)
-
-[node name="Tile85" parent="Tiles" unique_id=1074649918 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 128)
-
-[node name="Tile86" parent="Tiles" unique_id=1196408549 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 128)
-
-[node name="Tile87" parent="Tiles" unique_id=337496240 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 128)
-
-[node name="Tile88" parent="Tiles" unique_id=1297430227 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 128)
-
-[node name="Tile89" parent="Tiles" unique_id=954484084 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 128)
-
-[node name="Tile90" parent="Tiles" unique_id=748747751 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 128)
-
-[node name="Tile91" parent="Tiles" unique_id=1776528777 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 128)
-
-[node name="Tile92" parent="Tiles" unique_id=726721726 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 144)
-
-[node name="Tile93" parent="Tiles" unique_id=1575553137 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 144)
-
-[node name="Tile94" parent="Tiles" unique_id=1065162797 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 144)
-
-[node name="Tile95" parent="Tiles" unique_id=878484849 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 144)
-
-[node name="Tile96" parent="Tiles" unique_id=514576825 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 144)
-
-[node name="Tile97" parent="Tiles" unique_id=1459219658 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 144)
-
-[node name="Tile98" parent="Tiles" unique_id=1850923920 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 144)
-
-[node name="Tile99" parent="Tiles" unique_id=1006247931 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 144)
-
-[node name="Tile100" parent="Tiles" unique_id=1316000442 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 144)
-
-[node name="Tile102" parent="Tiles" unique_id=1979303779 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 160)
-
-[node name="Tile103" parent="Tiles" unique_id=440516985 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 160)
-
-[node name="Tile104" parent="Tiles" unique_id=1315947023 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 160)
-
-[node name="Tile105" parent="Tiles" unique_id=870397385 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 160)
-
-[node name="Tile106" parent="Tiles" unique_id=638621426 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 160)
-
-[node name="Tile107" parent="Tiles" unique_id=392040638 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 160)
-
-[node name="Tile108" parent="Tiles" unique_id=174282811 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 160)
-
-[node name="Tile109" parent="Tiles" unique_id=1196321713 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 160)
-
-[node name="Tile110" parent="Tiles" unique_id=653226445 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 160)
-
-[node name="Tile113" parent="Tiles" unique_id=1066874336 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 32)
-
-[node name="Tile114" parent="Tiles" unique_id=940887440 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 48)
-
-[node name="Tile115" parent="Tiles" unique_id=1893749889 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 64)
-
-[node name="Tile116" parent="Tiles" unique_id=1218463419 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 80)
-
-[node name="Tile117" parent="Tiles" unique_id=835920366 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 96)
-
-[node name="Tile118" parent="Tiles" unique_id=1809477510 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 112)
-
-[node name="Tile119" parent="Tiles" unique_id=669583393 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 128)
-
-[node name="Tile120" parent="Tiles" unique_id=1982251766 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 144)
-
-[node name="Tile2" parent="Tiles" unique_id=1593287229 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 0)
-
-[node name="Tile3" parent="Tiles" unique_id=1753157919 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 0)
-
-[node name="Tile4" parent="Tiles" unique_id=1423460168 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 0)
-
-[node name="Tile5" parent="Tiles" unique_id=1981454435 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 0)
-
-[node name="Tile6" parent="Tiles" unique_id=1411826570 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 0)
-
-[node name="Tile7" parent="Tiles" unique_id=1013923821 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 0)
-
-[node name="Tile8" parent="Tiles" unique_id=331095597 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 0)
-
-[node name="Tile9" parent="Tiles" unique_id=844202884 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 0)
-
-[node name="Tile10" parent="Tiles" unique_id=959175708 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 0)
-
-[node name="Tile11" parent="Tiles" unique_id=452050676 instance=ExtResource("1_n5kxj")]
-position = Vector2(0, 16)
-
-[node name="Tile12" parent="Tiles" unique_id=569925485 instance=ExtResource("1_n5kxj")]
-position = Vector2(16, 16)
-
-[node name="Tile13" parent="Tiles" unique_id=177420018 instance=ExtResource("1_n5kxj")]
-position = Vector2(32, 16)
-
-[node name="Tile14" parent="Tiles" unique_id=886337865 instance=ExtResource("1_n5kxj")]
-position = Vector2(48, 16)
-
-[node name="Tile23" parent="Tiles" unique_id=1832306077 instance=ExtResource("1_n5kxj")]
-position = Vector2(64, 16)
-
-[node name="Tile24" parent="Tiles" unique_id=508791392 instance=ExtResource("1_n5kxj")]
-position = Vector2(80, 16)
-
-[node name="Tile25" parent="Tiles" unique_id=1061617449 instance=ExtResource("1_n5kxj")]
-position = Vector2(96, 16)
-
-[node name="Tile26" parent="Tiles" unique_id=1379708848 instance=ExtResource("1_n5kxj")]
-position = Vector2(112, 16)
-
-[node name="Tile27" parent="Tiles" unique_id=739705643 instance=ExtResource("1_n5kxj")]
-position = Vector2(128, 16)
-
-[node name="Tile28" parent="Tiles" unique_id=1943755781 instance=ExtResource("1_n5kxj")]
-position = Vector2(144, 16)
-
-[node name="Tile112" parent="Tiles" unique_id=1299317487 instance=ExtResource("1_n5kxj")]
-position = Vector2(160, 16)
-
-[node name="Base" parent="Tiles" unique_id=788129804 instance=ExtResource("3_s5ej6")]
-
-[node name="Base2" parent="Tiles" unique_id=1089246681 instance=ExtResource("2_d0jdb")]
-position = Vector2(160, 0)
-groupNum = 2
-
-[node name="Base3" parent="Tiles" unique_id=207984043 instance=ExtResource("2_d0jdb")]
-position = Vector2(0, 160)
-groupNum = 3
-
-[node name="Base4" parent="Tiles" unique_id=340819016 instance=ExtResource("2_d0jdb")]
-position = Vector2(160, 160)
-groupNum = 4
-
-[node name="Pit" parent="Tiles" unique_id=563085083 instance=ExtResource("3_5pjlq")]
-position = Vector2(48, 112)
-
-[node name="Pit2" parent="Tiles" unique_id=1239101088 instance=ExtResource("3_5pjlq")]
-position = Vector2(48, 48)
-
-[node name="Pit3" parent="Tiles" unique_id=1733139844 instance=ExtResource("3_5pjlq")]
-position = Vector2(112, 48)
-
-[node name="Pit4" parent="Tiles" unique_id=740852193 instance=ExtResource("3_5pjlq")]
-position = Vector2(112, 112)
-
-[node name="Spawner" parent="Tiles" unique_id=768794526 instance=ExtResource("4_s5ej6")]
-position = Vector2(80, 80)
-spawnChance = 50
-
-[node name="Walls" type="Node2D" parent="." unique_id=2109234101]
-
-[node name="Wall45" parent="Walls" unique_id=1566749075 instance=ExtResource("5_tv3ey")]
-position = Vector2(24, 80)
-
-[node name="Wall" parent="Walls" unique_id=1963611468 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 80)
-
-[node name="Wall2" parent="Walls" unique_id=2118969312 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 64)
-
-[node name="Wall3" parent="Walls" unique_id=688274847 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 48)
-
-[node name="Wall4" parent="Walls" unique_id=637862658 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 32)
-
-[node name="Wall5" parent="Walls" unique_id=323731226 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 16)
-
-[node name="Wall6" parent="Walls" unique_id=1969811238 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 0)
-
-[node name="Wall7" parent="Walls" unique_id=811760195 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 96)
-
-[node name="Wall8" parent="Walls" unique_id=905563955 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 112)
-
-[node name="Wall9" parent="Walls" unique_id=311078346 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 128)
-
-[node name="Wall10" parent="Walls" unique_id=1949004562 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 144)
-
-[node name="Wall11" parent="Walls" unique_id=2073189944 instance=ExtResource("5_tv3ey")]
-position = Vector2(168, 160)
-
-[node name="Wall12" parent="Walls" unique_id=1670910617 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 160)
-
-[node name="Wall13" parent="Walls" unique_id=397739989 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 144)
-
-[node name="Wall14" parent="Walls" unique_id=1767079733 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 128)
-
-[node name="Wall15" parent="Walls" unique_id=760453722 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 112)
-
-[node name="Wall16" parent="Walls" unique_id=411654350 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 96)
-
-[node name="Wall17" parent="Walls" unique_id=418047004 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 80)
-
-[node name="Wall18" parent="Walls" unique_id=125192197 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 64)
-
-[node name="Wall19" parent="Walls" unique_id=301250925 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 48)
-
-[node name="Wall20" parent="Walls" unique_id=1065202442 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 32)
-
-[node name="Wall21" parent="Walls" unique_id=1440707032 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 16)
-
-[node name="Wall22" parent="Walls" unique_id=420412331 instance=ExtResource("5_tv3ey")]
-position = Vector2(-8, 0)
-
-[node name="Wall23" parent="Walls" unique_id=1393679464 instance=ExtResource("5_tv3ey")]
-position = Vector2(0, -8)
-rotation = 1.5707964
-
-[node name="Wall24" parent="Walls" unique_id=85919941 instance=ExtResource("5_tv3ey")]
-position = Vector2(80, -8)
-rotation = 1.5707964
-
-[node name="Wall25" parent="Walls" unique_id=194343350 instance=ExtResource("5_tv3ey")]
-position = Vector2(80, 168)
-rotation = 1.5707964
-
-[node name="Wall26" parent="Walls" unique_id=259073036 instance=ExtResource("5_tv3ey")]
-position = Vector2(16, -8)
-rotation = 1.5707964
-
-[node name="Wall27" parent="Walls" unique_id=1319233735 instance=ExtResource("5_tv3ey")]
-position = Vector2(32, -8)
-rotation = 1.5707964
-
-[node name="Wall28" parent="Walls" unique_id=1495888178 instance=ExtResource("5_tv3ey")]
-position = Vector2(48, -8)
-rotation = 1.5707964
-
-[node name="Wall29" parent="Walls" unique_id=1007756469 instance=ExtResource("5_tv3ey")]
+[node name="Wall26" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="3" unique_id=1862960745 instance=ExtResource("5_tv3ey")]
 position = Vector2(64, -8)
-rotation = 1.5707964
 
-[node name="Wall30" parent="Walls" unique_id=967033691 instance=ExtResource("5_tv3ey")]
-position = Vector2(96, -8)
-rotation = 1.5707964
+[node name="Wall27" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="4" unique_id=403729729 instance=ExtResource("5_tv3ey")]
+position = Vector2(64, 8)
 
-[node name="Wall31" parent="Walls" unique_id=830237784 instance=ExtResource("5_tv3ey")]
-position = Vector2(112, -7.999999)
-rotation = 1.5707964
-
-[node name="Wall32" parent="Walls" unique_id=1195518841 instance=ExtResource("5_tv3ey")]
-position = Vector2(128, -8)
-rotation = 1.5707964
-
-[node name="Wall33" parent="Walls" unique_id=509645672 instance=ExtResource("5_tv3ey")]
-position = Vector2(144, -8)
-rotation = 1.5707964
-
-[node name="Wall34" parent="Walls" unique_id=81893146 instance=ExtResource("5_tv3ey")]
-position = Vector2(160, -7.9999995)
-rotation = 1.5707964
-
-[node name="Wall35" parent="Walls" unique_id=1893789336 instance=ExtResource("5_tv3ey")]
-position = Vector2(0, 168)
-rotation = 1.5707964
-
-[node name="Wall36" parent="Walls" unique_id=1325731409 instance=ExtResource("5_tv3ey")]
-position = Vector2(16, 168)
-rotation = 1.5707964
-
-[node name="Wall37" parent="Walls" unique_id=696262464 instance=ExtResource("5_tv3ey")]
-position = Vector2(32, 168)
-rotation = 1.5707964
-
-[node name="Wall38" parent="Walls" unique_id=743976981 instance=ExtResource("5_tv3ey")]
-position = Vector2(48, 168)
-rotation = 1.5707964
-
-[node name="Wall39" parent="Walls" unique_id=1867617460 instance=ExtResource("5_tv3ey")]
-position = Vector2(64, 168)
-rotation = 1.5707964
-
-[node name="Wall40" parent="Walls" unique_id=619687190 instance=ExtResource("5_tv3ey")]
-position = Vector2(96, 168)
-rotation = 1.5707964
-
-[node name="Wall41" parent="Walls" unique_id=751130790 instance=ExtResource("5_tv3ey")]
-position = Vector2(112, 168)
-rotation = 1.5707964
-
-[node name="Wall42" parent="Walls" unique_id=2095734614 instance=ExtResource("5_tv3ey")]
-position = Vector2(128, 168)
-rotation = 1.5707964
-
-[node name="Wall43" parent="Walls" unique_id=1697964300 instance=ExtResource("5_tv3ey")]
-position = Vector2(144, 167.99998)
-rotation = 1.5707964
-
-[node name="Wall44" parent="Walls" unique_id=239449090 instance=ExtResource("5_tv3ey")]
-position = Vector2(160, 168)
-rotation = 1.5707964
-
-[node name="Wall46" parent="Walls" unique_id=107322633 instance=ExtResource("5_tv3ey")]
-position = Vector2(136, 80)
-
-[node name="Wall47" parent="Walls" unique_id=23737881 instance=ExtResource("5_tv3ey")]
-position = Vector2(136, 64)
-
-[node name="Wall48" parent="Walls" unique_id=213094681 instance=ExtResource("5_tv3ey")]
-position = Vector2(24, 64)
-
-[node name="Wall49" parent="Walls" unique_id=1138922591 instance=ExtResource("5_tv3ey")]
-position = Vector2(24, 96)
-
-[node name="Wall50" parent="Walls" unique_id=1483355718 instance=ExtResource("5_tv3ey")]
-position = Vector2(136, 96)
-
-[node name="Wall51" parent="Walls" unique_id=1889723667 instance=ExtResource("5_tv3ey")]
+[node name="Wall28" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="5" unique_id=203920524 instance=ExtResource("5_tv3ey")]
 position = Vector2(64, 24)
-rotation = 1.5707964
 
-[node name="Wall52" parent="Walls" unique_id=2054567953 instance=ExtResource("5_tv3ey")]
-position = Vector2(80, 24)
-rotation = 1.5707964
+[node name="Wall" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="6" unique_id=61756795 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 88)
 
-[node name="Wall53" parent="Walls" unique_id=911146395 instance=ExtResource("5_tv3ey")]
+[node name="Wall2" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="7" unique_id=577924085 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 72)
+
+[node name="Wall3" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="8" unique_id=1323981769 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 56)
+
+[node name="Wall4" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="9" unique_id=2136834567 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 40)
+
+[node name="Wall5" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="10" unique_id=1390001836 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 24)
+
+[node name="Wall6" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="11" unique_id=1670419101 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, 8)
+
+[node name="Wall7" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="12" unique_id=2129402602 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, -8)
+
+[node name="Wall8" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="13" unique_id=61117830 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, -24)
+
+[node name="Wall9" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="14" unique_id=665403342 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, -40)
+
+[node name="Wall10" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="15" unique_id=1274863378 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, -56)
+
+[node name="Wall11" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="16" unique_id=1173983113 instance=ExtResource("5_tv3ey")]
+position = Vector2(-80, -72)
+
+[node name="Wall12" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="17" unique_id=327554440 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, -72)
+
+[node name="Wall13" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="18" unique_id=1909109277 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, -56)
+
+[node name="Wall14" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="19" unique_id=1100991176 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, -40)
+
+[node name="Wall15" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="20" unique_id=1327541177 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, -24)
+
+[node name="Wall16" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="21" unique_id=1274436668 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, -8)
+
+[node name="Wall17" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="22" unique_id=136245460 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, 8)
+
+[node name="Wall18" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="23" unique_id=1253922466 instance=ExtResource("5_tv3ey")]
 position = Vector2(96, 24)
+
+[node name="Wall19" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="24" unique_id=383852875 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, 40)
+
+[node name="Wall20" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="25" unique_id=1485027613 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, 56)
+
+[node name="Wall21" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="26" unique_id=694049667 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, 72)
+
+[node name="Wall22" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="27" unique_id=1973668071 instance=ExtResource("5_tv3ey")]
+position = Vector2(96, 88)
+
+[node name="Wall29" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="28" unique_id=1610018559 instance=ExtResource("5_tv3ey")]
+position = Vector2(-8, 64)
 rotation = 1.5707964
 
-[node name="Wall54" parent="Walls" unique_id=954745147 instance=ExtResource("5_tv3ey")]
-position = Vector2(64, 136)
+[node name="Wall30" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="29" unique_id=896294957 instance=ExtResource("5_tv3ey")]
+position = Vector2(8, 64)
 rotation = 1.5707964
 
-[node name="Wall55" parent="Walls" unique_id=565367501 instance=ExtResource("5_tv3ey")]
-position = Vector2(80, 136)
+[node name="Wall31" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="30" unique_id=339576774 instance=ExtResource("5_tv3ey")]
+position = Vector2(24, 64)
 rotation = 1.5707964
 
-[node name="Wall56" parent="Walls" unique_id=689894634 instance=ExtResource("5_tv3ey")]
-position = Vector2(96, 136)
+[node name="Wall32" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="31" unique_id=1583823448 instance=ExtResource("5_tv3ey")]
+position = Vector2(-72, 96)
+rotation = 1.5707964
+
+[node name="Wall33" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="32" unique_id=669694084 instance=ExtResource("5_tv3ey")]
+position = Vector2(-56, 96)
+rotation = 1.5707964
+
+[node name="Wall34" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="33" unique_id=2114606182 instance=ExtResource("5_tv3ey")]
+position = Vector2(-40, 96)
+rotation = 1.5707964
+
+[node name="Wall35" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="34" unique_id=472792289 instance=ExtResource("5_tv3ey")]
+position = Vector2(-24, 96)
+rotation = 1.5707964
+
+[node name="Wall36" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="35" unique_id=630016088 instance=ExtResource("5_tv3ey")]
+position = Vector2(-8, 96)
+rotation = 1.5707964
+
+[node name="Wall37" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="36" unique_id=75352278 instance=ExtResource("5_tv3ey")]
+position = Vector2(8, 96)
+rotation = 1.5707964
+
+[node name="Wall38" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="37" unique_id=630192579 instance=ExtResource("5_tv3ey")]
+position = Vector2(24, 96)
+rotation = 1.5707964
+
+[node name="Wall39" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="38" unique_id=455548662 instance=ExtResource("5_tv3ey")]
+position = Vector2(40, 96)
+rotation = 1.5707964
+
+[node name="Wall40" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="39" unique_id=1399122541 instance=ExtResource("5_tv3ey")]
+position = Vector2(56, 96)
+rotation = 1.5707964
+
+[node name="Wall41" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="40" unique_id=1431508314 instance=ExtResource("5_tv3ey")]
+position = Vector2(72, 96)
+rotation = 1.5707964
+
+[node name="Wall42" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="41" unique_id=302683179 instance=ExtResource("5_tv3ey")]
+position = Vector2(88, 96)
+rotation = 1.5707964
+
+[node name="Wall43" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="42" unique_id=2098443046 instance=ExtResource("5_tv3ey")]
+position = Vector2(-72, -80)
+rotation = 1.5707964
+
+[node name="Wall44" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="43" unique_id=1633906244 instance=ExtResource("5_tv3ey")]
+position = Vector2(-56, -80)
+rotation = 1.5707964
+
+[node name="Wall45" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="44" unique_id=1334890188 instance=ExtResource("5_tv3ey")]
+position = Vector2(-40, -80)
+rotation = 1.5707964
+
+[node name="Wall46" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="45" unique_id=651362196 instance=ExtResource("5_tv3ey")]
+position = Vector2(-24, -80)
+rotation = 1.5707964
+
+[node name="Wall47" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="46" unique_id=172837605 instance=ExtResource("5_tv3ey")]
+position = Vector2(-8, -80)
+rotation = 1.5707964
+
+[node name="Wall48" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="47" unique_id=525951632 instance=ExtResource("5_tv3ey")]
+position = Vector2(8, -80)
+rotation = 1.5707964
+
+[node name="Wall49" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="48" unique_id=559623008 instance=ExtResource("5_tv3ey")]
+position = Vector2(24, -80)
+rotation = 1.5707964
+
+[node name="Wall50" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="49" unique_id=11037797 instance=ExtResource("5_tv3ey")]
+position = Vector2(40, -80)
+rotation = 1.5707964
+
+[node name="Wall51" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="50" unique_id=486299043 instance=ExtResource("5_tv3ey")]
+position = Vector2(56, -80)
+rotation = 1.5707964
+
+[node name="Wall52" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="51" unique_id=1913456031 instance=ExtResource("5_tv3ey")]
+position = Vector2(72, -80)
+rotation = 1.5707964
+
+[node name="Wall53" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="52" unique_id=1282565435 instance=ExtResource("5_tv3ey")]
+position = Vector2(88, -80)
+rotation = 1.5707964
+
+[node name="Wall54" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="53" unique_id=2100349185 instance=ExtResource("5_tv3ey")]
+position = Vector2(-8, -48)
+rotation = 1.5707964
+
+[node name="Wall55" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="54" unique_id=1800556418 instance=ExtResource("5_tv3ey")]
+position = Vector2(8, -48)
+rotation = 1.5707964
+
+[node name="Wall56" parent="Walls" parent_id_path=PackedInt32Array(343744745) index="55" unique_id=1125450533 instance=ExtResource("5_tv3ey")]
+position = Vector2(24, -48)
 rotation = 1.5707964

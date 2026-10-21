@@ -13,18 +13,17 @@ func _process(delta: float) -> void:
 func _enter_state():
 	for player in owner.players:
 		player.reset_for_match()
-	var mapScene = load("res://scenes/Map/Maps/Map1.tscn")
+	var mapScene = load("res://scenes/Map/Maps/Map2.tscn")
 	owner.mapInstance = mapScene.instantiate()
 	owner.add_child(owner.mapInstance)
-	owner.mapInstance.global_position=Vector2(9,9)
+	owner.mapInstance.global_position=Vector2(81,81)
+	
+	owner.mapInstance.call_deferred("map_preparation")
 	
 	if Global.gameNode.gameSettings.get_game_setting_value("enableEvents") == "Yes":
 		owner.eventHandler.start_event_timer()
 	
-	var tiles = owner.mapInstance.get_node("Tiles").get_children()
-	for tile in tiles:
-		tile._ready()
-	owner.mapInstance.randomize_bases()
+	
 	
 	owner.matchComponentDict[Constants.MATCH_COMPONENT_MAP]=owner.mapInstance
 	
@@ -34,6 +33,7 @@ func _enter_state():
 	owner.get_node("GameHUD").show()
 	owner.get_node("MatchTimer").wait_time = owner.matchTime
 	owner.get_node("MatchTimer").start()
+	
 	
 	pass
 	

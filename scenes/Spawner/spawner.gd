@@ -1,8 +1,9 @@
 extends Node2D
+class_name Spawner
 
 @onready var spawnHandler: Node = $SpawnHandler
 
-@export var spawnChance: int = 10
+@export var spawnChance: int = 50
 
 
 var spawnRates: Array[SpawnRate] = []

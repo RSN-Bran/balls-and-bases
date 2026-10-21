@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" format=3 uid="uid://ctmma8hkec40w"]
+
+[ext_resource type="PackedScene" uid="uid://cxtomg4botj1n" path="res://scenes/Tile/Tile.tscn" id="1_8pan1"]
+[ext_resource type="PackedScene" uid="uid://ly7vf15c3jyg" path="res://scenes/Pit/Pit.tscn" id="2_nmhg0"]
+[ext_resource type="PackedScene" uid="uid://du7ixts8agoto" path="res://scenes/Spawner/Spawner.tscn" id="3_2ba2t"]
+[ext_resource type="PackedScene" uid="uid://o3ig3ikx4olm" path="res://scenes/Base/baseGroup1.tscn" id="4_ii60a"]
+[ext_resource type="PackedScene" uid="uid://bfehxtd7bdi5d" path="res://scenes/Base/baseGroup2.tscn" id="5_uw4vi"]
+[ext_resource type="PackedScene" uid="uid://b31j8metuk0cf" path="res://scenes/Base/baseGroup3.tscn" id="6_lcxr5"]
+[ext_resource type="PackedScene" uid="uid://n1naiohigsil" path="res://scenes/Base/baseGroup4.tscn" id="7_5dbmt"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_tv3ey"]
+resource_name = "TileTypes"
+scenes/1/scene = ExtResource("1_8pan1")
+scenes/3/scene = ExtResource("2_nmhg0")
+scenes/4/scene = ExtResource("3_2ba2t")
+scenes/5/scene = ExtResource("4_ii60a")
+scenes/6/scene = ExtResource("5_uw4vi")
+scenes/7/scene = ExtResource("6_lcxr5")
+scenes/8/scene = ExtResource("7_5dbmt")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_tv3ey")
