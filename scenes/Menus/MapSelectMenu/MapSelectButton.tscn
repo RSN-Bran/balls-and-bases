@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://q2ssibdi1sld"]
+
+[ext_resource type="Script" uid="uid://1t4ie8ocg7hk" path="res://scenes/Menus/MapSelectMenu/map_select_button.gd" id="1_fnd30"]
+
+[node name="Button" type="Button" unique_id=89531413]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_fnd30")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

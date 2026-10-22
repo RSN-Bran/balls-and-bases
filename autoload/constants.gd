@@ -27,7 +27,8 @@ enum MENU_TYPE {
 	GAME_SETTINGS,
 	MATCH_SETTINGS,
 	PAUSE_MENU,
-	BETWEEN_ROUNDS
+	BETWEEN_ROUNDS,
+	MAP_SELECT
 }
 
 enum BALL_TYPE {
@@ -65,6 +66,7 @@ func _ready() -> void:
 	MENU_TYPES[MENU_TYPE.MATCH_SETTINGS] = load("res://scenes/Menus/MatchSettingsMenu/MatchSettingsMenu.tscn")
 	MENU_TYPES[MENU_TYPE.PAUSE_MENU] = load("res://scenes/Menus/PauseMenu/PauseMenu.tscn")
 	MENU_TYPES[MENU_TYPE.BETWEEN_ROUNDS] = load("res://scenes/BetweenGamesHUD/BetweenGamesHUD.tscn")
+	MENU_TYPES[MENU_TYPE.MAP_SELECT] = load("res://scenes/Menus/MapSelectMenu/MapSelectMenu.tscn")
 	
 	EVENT_TYPES[EVENT_TYPE.COMMUNISM] = load("res://scenes/Events/NeutralEvents/Communism/CommunismEvent.tscn")
 	EVENT_TYPES[EVENT_TYPE.FREEZE]=load("res://scenes/Events/NeutralEvents/Freeze/FreezeEvent.tscn" )
@@ -75,7 +77,7 @@ func _ready() -> void:
 	EVENT_TYPES[EVENT_TYPE.SPINNING_ARROWS] = load("res://scenes/Events/NeutralEvents/SpinningArrows/SpinningArrows.tscn")
 	
 	maps = [
-		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map1.tscn"), 50, 4),
-		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map2.tscn"), 20, 4),
-		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map3.tscn"), 60, 4)
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map1.tscn"), 50, 4, "Map 1"),
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map2.tscn"), 20, 4, "Map 2"),
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map3.tscn"), 60, 4, "Map 3")
 	]

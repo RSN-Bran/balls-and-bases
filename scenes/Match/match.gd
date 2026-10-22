@@ -4,13 +4,14 @@ extends Node
 @onready var timer: Timer = $MatchTimer
 @onready var pauseFadeLayer: ColorRect = $GameHUD/PauseFadeLayer
 @onready var eventHandler = $EventHandler
+@onready var gameHud = $GameHUD
 
 var betweenGamesHud: PackedScene = load("res://scenes/BetweenGamesHUD/BetweenGamesHUD.tscn")
 
 var matchTime
 var currentState
 var players
-var mapInstance: Node2D
+var mapInstance: PlayMap
 var currentlyPaused: bool = false
 
 var stateMachine
@@ -23,6 +24,7 @@ func _ready() -> void:
 	SignalBus.connect("_pause_unpause", pause_unpause)
 	SignalBus.connect("_freeze_unfreeze", freeze_unfreeze)
 	SignalBus.connect("_spawn_mover", spawn_mover)
+	SignalBus.connect("_choose_map", choose_map)
 	
 	pauseFadeLayer.hide()
 	players = [
@@ -85,3 +87,8 @@ func clear_movers() -> void:
 	var allMovers = movers.get_children()
 	for mover in allMovers:
 		mover.queue_free()
+		
+func choose_map(map: PlayMap):
+	self.mapInstance=map
+	stateMachine.set_state(stateMachine.states.Playing)
+	pass

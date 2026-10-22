@@ -13,7 +13,9 @@ func _process(delta: float) -> void:
 func _enter_state():
 	for player in owner.players:
 		player.reset_for_match()
-	owner.mapInstance = Constants.maps[randi_range(0, Constants.maps.size()-1)]
+	
+	if owner.mapInstance==null:
+		owner.mapInstance = Constants.maps[randi_range(0, Constants.maps.size()-1)]
 	owner.add_child(owner.mapInstance)
 	
 	
@@ -21,8 +23,6 @@ func _enter_state():
 	
 	if Global.gameNode.gameSettings.get_game_setting_value("enableEvents") == "Yes":
 		owner.eventHandler.start_event_timer()
-	
-	
 	
 	owner.matchComponentDict[Constants.MATCH_COMPONENT_MAP]=owner.mapInstance
 	

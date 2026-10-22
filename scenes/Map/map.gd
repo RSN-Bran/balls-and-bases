@@ -5,18 +5,20 @@ class_name PlayMap
 
 var playerCount: int = 0
 var baseSpawnRate: int
+var mapName: String =""
 
 var map_dimensions: Vector2i = Vector2.ZERO
 
 var bases: Array[Base]
 var spawners: Array[Spawner]
 
-static func new_play_map(mapScene: PackedScene, baseSpawnRate: int, playerCount: int) -> PlayMap:
+static func new_play_map(mapScene: PackedScene, baseSpawnRate: int, playerCount: int, mapName: String) -> PlayMap:
 	if mapScene == null:
 		return
 	var instantiatedMap = mapScene.instantiate()
 	instantiatedMap.baseSpawnRate = baseSpawnRate
 	instantiatedMap.playerCount=playerCount
+	instantiatedMap.mapName=mapName
 		
 	return instantiatedMap
 	

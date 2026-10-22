@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b750o8jol467l"]
+
+[ext_resource type="Script" uid="uid://dil6yqtsxe2ev" path="res://scenes/Menus/MapSelectMenu/map_select_buttons.gd" id="1_pav5i"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=337851177]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_pav5i")

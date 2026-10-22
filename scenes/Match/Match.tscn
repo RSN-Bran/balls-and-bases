@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cajhl8numjagv" path="res://scenes/Match/MatchStateMachine.gd" id="4_tmeo2"]
 [ext_resource type="PackedScene" uid="uid://djvxc4ktpono1" path="res://scenes/EventContainer/EventContainer/event.tscn" id="4_uf2r1"]
 [ext_resource type="Script" uid="uid://c68iyr23mvqgs" path="res://scenes/Match/MatchStateBetweenGames.gd" id="5_u2nqx"]
+[ext_resource type="Script" uid="uid://cnijml6j14wxh" path="res://scenes/Match/MatchStateChooseMap.gd" id="6_7g2a4"]
 [ext_resource type="Script" uid="uid://bqjr3ircbjjya" path="res://scenes/Match/MatchStateGameEnd.gd" id="8_uf2r1"]
 
 [node name="Match" type="Node2D" unique_id=889272476]
@@ -33,6 +34,9 @@ z_index = 20
 
 [node name="MatchStateMachine" type="Node" parent="." unique_id=1270754605]
 script = ExtResource("4_tmeo2")
+
+[node name="ChooseMap" type="Node" parent="MatchStateMachine" unique_id=192793986]
+script = ExtResource("6_7g2a4")
 
 [node name="Playing" type="Node" parent="MatchStateMachine" unique_id=475766505]
 script = ExtResource("3_1psl4")
