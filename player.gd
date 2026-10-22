@@ -65,13 +65,13 @@ func process_input_press_event(event: InputEvent):
 		elif Input.is_action_just_pressed("Left Arrow"):
 			setArrow(270)
 		elif Input.is_action_just_pressed("Move Up"):
-			move_to_next_tile(Vector2(0,-1))
+			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["UP"])
 		elif Input.is_action_just_pressed("Move Left"):
-			move_to_next_tile(Vector2(-1,0))
+			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["LEFT"])
 		elif Input.is_action_just_pressed("Move Down"):
-			move_to_next_tile(Vector2(0,1))
+			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["DOWN"])
 		elif Input.is_action_just_pressed("Move Right"):
-			move_to_next_tile(Vector2(1,0))
+			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["RIGHT"])
 		
 func process_input_release_event(event):
 	direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
@@ -95,7 +95,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	
 func move_to_next_tile(dir: Vector2i):
 	var tempNewCoords = currentTileCoords+dir
-	if tempNewCoords.x < 0 or tempNewCoords.y < 0 or tempNewCoords.x > 11 or tempNewCoords.y > 11:
+	if tempNewCoords.x < 1 or tempNewCoords.y < 1 or tempNewCoords.x > 11 or tempNewCoords.y > 11:
 		return
 	currentTileCoords = currentTileCoords+dir
 	global_position = currentTileCoords*16

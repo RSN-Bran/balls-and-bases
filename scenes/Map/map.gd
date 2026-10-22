@@ -3,17 +3,29 @@ class_name PlayMap
 
 @onready var tileMapLayer: TileMapLayer = $Tiles
 
-@export var playerCount: int = 0
-@export var baseSpawnRate: int
+var playerCount: int = 0
+var baseSpawnRate: int
+
+var map_dimensions: Vector2i = Vector2.ZERO
 
 var bases: Array[Base]
 var spawners: Array[Spawner]
 
+static func new_play_map(mapScene: PackedScene, baseSpawnRate: int, playerCount: int) -> PlayMap:
+	if mapScene == null:
+		return
+	var instantiatedMap = mapScene.instantiate()
+	instantiatedMap.baseSpawnRate = baseSpawnRate
+	instantiatedMap.playerCount=playerCount
+		
+	return instantiatedMap
+	
 func _ready():
 	SignalBus.connect("_randomize_player_positions", randomize_bases)
-	print(tileMapLayer.get_children())
 
 func map_preparation():
+	self.global_position=Vector2(81,81)
+	self.map_dimensions = tileMapLayer.get_used_rect().size
 	for tile in tileMapLayer.get_children():
 		if tile is Base:
 			bases.append(tile)
@@ -30,7 +42,6 @@ func randomize_bases():
 	
 	while i < playerCount:
 		var baseGroup = bases.filter(func(element): return element.groupNum==(i+1))
-		print(baseGroup)
 		for base in baseGroup:
 			base.set_player(players[i].playerNum)
 		i+=1

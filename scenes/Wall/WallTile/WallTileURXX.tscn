@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c816lt1rappcb"]
+
+[ext_resource type="PackedScene" uid="uid://bjgraxknlo3y8" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentR.tscn" id="1_rapef"]
+[ext_resource type="PackedScene" uid="uid://dgyvh1ag4mmkb" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentU.tscn" id="2_3r7o5"]
+
+[node name="WallTileURXX" type="Node2D" unique_id=533599169]
+
+[node name="WallTileComponentR" parent="." unique_id=114330553 instance=ExtResource("1_rapef")]
+
+[node name="WallTileComponentU" parent="." unique_id=2009077802 instance=ExtResource("2_3r7o5")]

@@ -44,7 +44,7 @@ func spawn_ball() -> void:
 	var ballToSpawn = spawnHandler.get_ball_spawn_type()
 	var mover = Mover.new_mover(
 		ballToSpawn, 
-		Constants.POSSIBLE_DIRECTIONS[randi_range(0, Constants.POSSIBLE_DIRECTIONS.size()-1)], 
+		Constants.POSSIBLE_DIRECTIONS[Constants.POSSIBLE_DIRECTIONS.keys().pick_random()], 
 		self.global_position, 
 		Global.globalSpeedModifier
 	)

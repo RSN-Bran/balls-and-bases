@@ -12,6 +12,7 @@ func _ready() -> void:
 	gameSettings.add_setting("firstToWins", "First To Wins", [1,2,3,4,5], 0)
 	gameSettings.add_setting("maxTilesPerPlayer", "Max Tiles Per Player", [1,2,3,4,5], 2)
 	gameSettings.add_setting("enableEvents", "Enable Events", ["Yes", "No"], 0)
+	gameSettings.add_setting("stageSelection", "Stage Selection", ["Random", "Choose", "In Order"], 0)
 	
 	
 	pass # Replace with function body.

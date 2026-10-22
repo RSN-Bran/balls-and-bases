@@ -27,6 +27,10 @@ layout_mode = 2
 size_flags_vertical = 3
 settingKey = "enableEvents"
 
+[node name="Stage Selection" parent="CenterContainer/VBoxContainer" parent_id_path=PackedInt32Array(663586763) index="4" unique_id=1533049114 instance=ExtResource("2_ckk2l")]
+layout_mode = 2
+settingKey = "stageSelection"
+
 [node name="Back" type="Button" parent="HorizontalBottom/HBoxContainer" parent_id_path=PackedInt32Array(2054617088) index="0" unique_id=1964505873]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_7tylq")

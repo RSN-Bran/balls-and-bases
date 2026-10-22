@@ -1,0 +1,39 @@
+[gd_resource type="TileSet" format=3 uid="uid://c56sx16syuj08"]
+
+[ext_resource type="PackedScene" uid="uid://bqa3u3e76f31b" path="res://scenes/Wall/WallTile/WallTileUXXL.tscn" id="1_l1fnv"]
+[ext_resource type="PackedScene" uid="uid://b6rkdqbub58s6" path="res://scenes/Wall/WallTile/WallTileUXXX.tscn" id="2_orxa2"]
+[ext_resource type="PackedScene" uid="uid://do80ds3dmcd80" path="res://scenes/Wall/WallTile/WallTileXRDL.tscn" id="3_4limf"]
+[ext_resource type="PackedScene" uid="uid://b8ei5yrwawnmp" path="res://scenes/Wall/WallTile/WallTileXRDX.tscn" id="4_pphni"]
+[ext_resource type="PackedScene" uid="uid://bhq85x8wcuat4" path="res://scenes/Wall/WallTile/WallTileXRXL.tscn" id="5_f8y38"]
+[ext_resource type="PackedScene" uid="uid://bdlkkf6jl50ym" path="res://scenes/Wall/WallTile/WallTileXRXX.tscn" id="6_okr8i"]
+[ext_resource type="PackedScene" uid="uid://bjofdjgvr2aa2" path="res://scenes/Wall/WallTile/WallTileXXDL.tscn" id="7_wmhw5"]
+[ext_resource type="PackedScene" uid="uid://dt2yveeqr0tho" path="res://scenes/Wall/WallTile/WallTileXXDX.tscn" id="8_5bksp"]
+[ext_resource type="PackedScene" uid="uid://btxl2t0ev5ko5" path="res://scenes/Wall/WallTile/WallTileXXXL.tscn" id="9_wjusu"]
+[ext_resource type="PackedScene" uid="uid://b3blsapxvwgy3" path="res://scenes/Wall/WallTile/WallTileXXXX.tscn" id="10_dxdyp"]
+[ext_resource type="PackedScene" uid="uid://cw1dlpak3ylwv" path="res://scenes/Wall/WallTile/WallTileURDL.tscn" id="11_1c3p1"]
+[ext_resource type="PackedScene" uid="uid://dqh17ruhi1l0l" path="res://scenes/Wall/WallTile/WallTileURDX.tscn" id="12_nl8l4"]
+[ext_resource type="PackedScene" uid="uid://dkjaeagl5sttx" path="res://scenes/Wall/WallTile/WallTileURXL.tscn" id="13_ihfel"]
+[ext_resource type="PackedScene" uid="uid://c816lt1rappcb" path="res://scenes/Wall/WallTile/WallTileURXX.tscn" id="14_6ehp3"]
+[ext_resource type="PackedScene" uid="uid://2ccey7dj7knn" path="res://scenes/Wall/WallTile/WallTileUXDL.tscn" id="15_wki2s"]
+[ext_resource type="PackedScene" uid="uid://wfpd452v7iaa" path="res://scenes/Wall/WallTile/WallTileUXDX.tscn" id="16_5pq64"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_36fp2"]
+scenes/4/scene = ExtResource("11_1c3p1")
+scenes/5/scene = ExtResource("12_nl8l4")
+scenes/6/scene = ExtResource("13_ihfel")
+scenes/7/scene = ExtResource("14_6ehp3")
+scenes/8/scene = ExtResource("15_wki2s")
+scenes/9/scene = ExtResource("16_5pq64")
+scenes/10/scene = ExtResource("1_l1fnv")
+scenes/11/scene = ExtResource("2_orxa2")
+scenes/12/scene = ExtResource("3_4limf")
+scenes/13/scene = ExtResource("4_pphni")
+scenes/14/scene = ExtResource("5_f8y38")
+scenes/15/scene = ExtResource("6_okr8i")
+scenes/16/scene = ExtResource("7_wmhw5")
+scenes/17/scene = ExtResource("8_5bksp")
+scenes/18/scene = ExtResource("9_wjusu")
+scenes/19/scene = ExtResource("10_dxdyp")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_36fp2")

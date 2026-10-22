@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ckbyw3m0cp25f"]
+
+[ext_resource type="PackedScene" uid="uid://drtxokshw4did" path="res://scenes/Wall/Wall.tscn" id="1_plokp"]
+
+[node name="WallTileComponentL" type="Node2D" unique_id=1802216247]
+
+[node name="Wall" parent="." unique_id=1566749075 instance=ExtResource("1_plokp")]
+position = Vector2(-8, 0)

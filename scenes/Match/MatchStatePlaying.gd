@@ -13,10 +13,9 @@ func _process(delta: float) -> void:
 func _enter_state():
 	for player in owner.players:
 		player.reset_for_match()
-	var mapScene = load("res://scenes/Map/Maps/Map2.tscn")
-	owner.mapInstance = mapScene.instantiate()
+	owner.mapInstance = Constants.maps[randi_range(0, Constants.maps.size()-1)]
 	owner.add_child(owner.mapInstance)
-	owner.mapInstance.global_position=Vector2(81,81)
+	
 	
 	owner.mapInstance.call_deferred("map_preparation")
 	

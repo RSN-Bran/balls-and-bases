@@ -2,12 +2,12 @@ extends Node
 
 const PIXEL_DIMENSIONS = Vector2(320, 180)
 
-const POSSIBLE_DIRECTIONS = [
-	Vector2(1,0),
-	Vector2(0,1),
-	Vector2(-1,0),
-	Vector2(0,-1)
-]
+const POSSIBLE_DIRECTIONS = {
+	"UP": Vector2i(0,-1),
+	"LEFT": Vector2i(-1,0),
+	"DOWN": Vector2i(0,1),
+	"RIGHT": Vector2i(1,0)
+}
 
 const MATCH_COMPONENT_BALLS=1
 const MATCH_COMPONENT_MAP=2
@@ -52,6 +52,8 @@ var MENU_TYPES: Dictionary = {}
 var BALL_TYPES: Dictionary = {}
 var EVENT_TYPES: Dictionary = {}
 
+var maps: Array[PlayMap] = []
+
 func _ready() -> void:
 	BALL_TYPES[BALL_TYPE.STANDARD_BALL]= load("res://scenes/Mover/Ball/Ball.tscn")
 	BALL_TYPES[BALL_TYPE.SPIKE_BALL]= load("res://scenes/Mover/Spike Ball/spike_ball.tscn")
@@ -71,3 +73,9 @@ func _ready() -> void:
 	EVENT_TYPES[EVENT_TYPE.SPEED_DOWN] = load("res://scenes/Events/NeutralEvents/SpeedDown/SpeedDownEvent.tscn")
 	EVENT_TYPES[EVENT_TYPE.SPEED_UP]=load("res://scenes/Events/NeutralEvents/SpeedUp/SpeedUpEvent.tscn")
 	EVENT_TYPES[EVENT_TYPE.SPINNING_ARROWS] = load("res://scenes/Events/NeutralEvents/SpinningArrows/SpinningArrows.tscn")
+	
+	maps = [
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map1.tscn"), 50, 4),
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map2.tscn"), 20, 4),
+		PlayMap.new_play_map(load("res://scenes/Map/Maps/Map3.tscn"), 60, 4)
+	]

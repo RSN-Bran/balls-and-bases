@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bqa3u3e76f31b"]
+
+[ext_resource type="PackedScene" uid="uid://ckbyw3m0cp25f" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentL.tscn" id="1_jnm1d"]
+[ext_resource type="PackedScene" uid="uid://dgyvh1ag4mmkb" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentU.tscn" id="2_7r5w7"]
+
+[node name="WallTileUXXL" type="Node2D" unique_id=1536037239]
+
+[node name="WallTileComponentL" parent="." unique_id=1802216247 instance=ExtResource("1_jnm1d")]
+
+[node name="WallTileComponentU" parent="." unique_id=2009077802 instance=ExtResource("2_7r5w7")]

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cw1dlpak3ylwv"]
+
+[ext_resource type="PackedScene" uid="uid://cf5t8j2fg58nm" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentD.tscn" id="1_1xasa"]
+[ext_resource type="PackedScene" uid="uid://ckbyw3m0cp25f" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentL.tscn" id="2_shlir"]
+[ext_resource type="PackedScene" uid="uid://bjgraxknlo3y8" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentR.tscn" id="3_kulyn"]
+[ext_resource type="PackedScene" uid="uid://dgyvh1ag4mmkb" path="res://scenes/Wall/WallTile/WallTileComponent/WallTileComponentU.tscn" id="4_hsgd0"]
+
+[node name="WallTileURDL" type="Node2D" unique_id=1719069012]
+
+[node name="WallTileComponentD" parent="." unique_id=1937295481 instance=ExtResource("1_1xasa")]
+
+[node name="WallTileComponentL" parent="." unique_id=1802216247 instance=ExtResource("2_shlir")]
+
+[node name="WallTileComponentR" parent="." unique_id=114330553 instance=ExtResource("3_kulyn")]
+
+[node name="WallTileComponentU" parent="." unique_id=2009077802 instance=ExtResource("4_hsgd0")]

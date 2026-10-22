@@ -10,11 +10,9 @@ var playerNum = 0
 var player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Tile._ready()
 	pass # Replace with function body.
 
 func set_player(playerNum):
-	print(playerNum)
 	if playerNum == 0:
 		return
 	self.playerNum=playerNum
