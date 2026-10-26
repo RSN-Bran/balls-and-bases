@@ -34,10 +34,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 
-	if direction:
-		velocity = Vector2(direction.x*SPEED, direction.y*SPEED)
+	if self.direction:
+		self.velocity = Vector2(self.direction.x*SPEED, self.direction.y*SPEED)
 	else:
-		velocity=Vector2(0,0)
+		self.velocity=Vector2(0,0)
 
 	move_and_slide()
 	
@@ -56,9 +56,10 @@ func _physics_process(delta: float) -> void:
 			global_position[dimension] = Constants.PIXEL_DIMENSIONS[dimension]
 	
 func process_input_press_event(event: InputEvent):
-	
-	if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
-		direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
+	print(self)
+	print(event)
+	#if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
+		#self.direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
 	
 	if selectedTile != null:
 		if Input.is_action_just_pressed("Up Arrow"):
@@ -79,8 +80,8 @@ func process_input_press_event(event: InputEvent):
 			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["RIGHT"])
 		
 func process_input_release_event(event):
-	if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
-		direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
+	#if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
+		#self.direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
 	pass
 			
 func setArrow(direction):
