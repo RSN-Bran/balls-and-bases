@@ -25,6 +25,11 @@ func _ready():
 	
 	
 func _physics_process(delta: float) -> void:
+	
+	if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
+		$ArrowSprite.show()
+	else:
+		$ArrowSprite.hide()
 		# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
@@ -52,8 +57,8 @@ func _physics_process(delta: float) -> void:
 	
 func process_input_press_event(event: InputEvent):
 	
-		
-	direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
+	if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
+		direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
 	
 	if selectedTile != null:
 		if Input.is_action_just_pressed("Up Arrow"):
@@ -74,7 +79,8 @@ func process_input_press_event(event: InputEvent):
 			move_to_next_tile(Constants.POSSIBLE_DIRECTIONS["RIGHT"])
 		
 func process_input_release_event(event):
-	direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
+	if Global.gameNode.get_node("GameStateMachine").stateMachine.state == Global.gameNode.get_node("GameStateMachine").stateMachine.states[Constants.GAME_STATE_IN_GAME]:
+		direction = Input.get_vector("Joystick Left", "Joystick Right", "Joystick Up", "Joystick Down")
 	pass
 			
 func setArrow(direction):
